@@ -1,1 +1,24 @@
-<p>iniciar-sesion works!</p>
+<form
+  [formGroup]="formulariocredenciales"
+  (ngSubmit)="manejarEnvio()"
+  class="border border-primary p-4"
+>
+  <legend>Iniciar Sesión</legend>
+  <div class="mb-3">
+    <input
+      class="border border-secondary"
+      type="text"
+      placeholder="Usuario"
+      formControlName="usuario"
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      class="border border-secondary"
+      type="password"
+      placeholder="Contraseña"
+      formControlName="password"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

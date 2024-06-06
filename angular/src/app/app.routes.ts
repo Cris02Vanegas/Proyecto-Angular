@@ -16,36 +16,36 @@ export const routes: Routes = [
     },
 
     {
-        path: "productos", component: ProductosComponent
+        path: "productos", component: ProductosComponent,title: "Productos"
     },
 
     {
-        path: "servicios", component: ServiciosComponent
+        path: "servicios", component: ServiciosComponent,title: "Servicios"
     }
     ,
 
     {
-        path: "nosotros", component: NosotrosComponent
+        path: "nosotros", component: NosotrosComponent,title: "Nosotros"
     }
     ,
 
     {
-        path: "contacto", component: ContactoComponent
+        path: "contacto", component: ContactoComponent,title: "Contacto"
     }
     ,
 
     {
-        path: "registrarse", component: RegistrarseComponent
+        path: "registrarse", component: RegistrarseComponent,title: "Registrarse"
     }
     ,
 
     {
-        path: "iniciar-sesion", component: IniciarSesionComponent
+        path: "iniciar-sesion", component: IniciarSesionComponent,title: "Iniciar Sesion"
     }
     ,
 
     {
-        path: "privado", component: PrivadoComponent
+        path: "privado", component: PrivadoComponent,title: "Privado"
     },
 
     {
