@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -6,7 +6,12 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Interfaces } from '../../interfaces/interfaces';
+import { LoginService } from '../../services/login.service';
+
+const jwtHelperService = new JwtHelperService();
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -16,6 +21,9 @@ import { Interfaces } from '../../interfaces/interfaces';
   styleUrl: './iniciar-sesion.component.css',
 })
 export class IniciarSesionComponent {
+  router = inject(Router);
+  loginService: LoginService = inject(LoginService);
+
   formulariocredenciales = new FormGroup({
     usuario: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
@@ -31,7 +39,13 @@ export class IniciarSesionComponent {
           usuario,
           password,
         };
-        console.log(credenciales);
+        this.loginService.login(credenciales).subscribe((respuesta: any) => {
+          /* console.log('Respuesta: ', respuesta); */
+          const decoded = jwtHelperService.decodeToken(respuesta.datos.token);
+          /* console.log('decode: ', decoded); */
+          localStorage.setItem('token', respuesta.datos.token);
+          this.router.navigateByUrl('/privado');
+        });
       }
     } else {
       console.log('Sin datos');

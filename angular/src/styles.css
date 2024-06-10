@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-p {
-  font-size: 1.5rem;
-  font-style: italic;
+body {
+  background-image: url(./assets/bf_Colombia.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
