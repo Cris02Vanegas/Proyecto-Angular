@@ -10,10 +10,13 @@ export class LoginService {
 
   httpClient = inject(HttpClient);
 
+  API_URL = 'http://localhost:3000/inicio-sesion';
+
   login(credential: Interfaces) {
-    return this.httpClient.post(
-      'http://localhost:3000/inicio-sesion',
-      credential
-    );
+    return this.httpClient.post(this.API_URL, credential);
+  }
+
+  validarToken(token: string) {
+    return this.httpClient.get(`${this.API_URL}/${token}`);
   }
 }
