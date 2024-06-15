@@ -18,12 +18,19 @@
       <div class="navbar-nav">
         <a class="nav-link active me-3" routerLink="/inicio">Inicio</a>
         <a class="nav-link me-3" routerLink="/productos">Productos</a>
-        <a class="nav-link me-3" routerLink="/nosotros">Nosotros</a>
         <a class="nav-link me-3" routerLink="/contacto">Contacto</a>
         <a class="nav-link me-3" routerLink="/registrarse">Sign Up</a>
-        <a class="nav-link me-3" routerLink="/iniciar-sesion">Log in</a>
         <a class="nav-link me-3" routerLink="/privado">MotoTravels</a>
       </div>
     </div>
+  </div>
+  <div class="text-white">
+    @if (loginService.isLogin()) {
+    <button type="button" class="btn btn-link" (click)="loginService.logOut()">
+      LogOut
+    </button>
+    }@else {
+    <a class="nav-link me-3" routerLink="/iniciar-sesion">Login</a>
+    }
   </div>
 </nav>

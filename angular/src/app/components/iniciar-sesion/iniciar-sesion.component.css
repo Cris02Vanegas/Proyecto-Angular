@@ -1,10 +1,18 @@
 form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: lightseagreen;
+  background-color: white;
+  padding: 60px 60px 30px 60px;
+  border-radius: 20px;
 }
+
+input {
+  width: 300px;
+}
+
+/* @media only screen and (min-width: 320px) and (max-width: 767px) {
+  form {
+    margin: 100px;
+  }
+} */

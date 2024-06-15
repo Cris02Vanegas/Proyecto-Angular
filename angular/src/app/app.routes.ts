@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
+import { activateGuard } from './guards/activate.guard';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
-import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
@@ -28,11 +28,6 @@ export const routes: Routes = [
     title: 'Servicios',
   },
   {
-    path: 'nosotros',
-    component: NosotrosComponent,
-    title: 'Nosotros',
-  },
-  {
     path: 'contacto',
     component: ContactoComponent,
     title: 'Contacto',
@@ -40,16 +35,17 @@ export const routes: Routes = [
   {
     path: 'registrarse',
     component: RegistrarseComponent,
-    title: 'Registrarse',
+    title: 'Sign Up',
   },
   {
     path: 'iniciar-sesion',
     component: IniciarSesionComponent,
-    title: 'Iniciar Sesion',
+    title: 'Log In',
   },
   {
     path: 'privado',
     component: PrivadoComponent,
+    canActivate: [activateGuard],
     title: 'Moto Travels Colombia',
   },
 

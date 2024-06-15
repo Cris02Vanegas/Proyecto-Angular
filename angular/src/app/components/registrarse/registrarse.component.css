@@ -1,0 +1,14 @@
+form {
+  background-color: white;
+  padding: 10px 40px 30px 40px;
+  border-radius: 20px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-in {
+  width: 70%;
+}

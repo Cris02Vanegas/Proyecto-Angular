@@ -1,1 +1,67 @@
-<p>registrarse works!</p>
+<div class="d-sm-flex">
+  <form class="row g-3 d-flex">
+    <div class="logo">
+      <img src="../../../assets/login.png" alt="logi-ico" />
+    </div>
+    <div class="fw-bold fs-4 d-flex justify-content-center">Sign Up</div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Nombre</label>
+      <input
+        type="text"
+        class="form-control border border-secondary"
+        id="inputEmail4"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Usuario</label>
+      <input
+        type="text"
+        class="form-control border border-secondary"
+        id="inputPassword4"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control border border-secondary"
+        id="inputEmail4"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control border border-secondary"
+        id="inputPassword4"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="inputAddress" class="form-label">Teléfono</label>
+      <input
+        type="text"
+        class="form-control border border-secondary"
+        id="inputAddress"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">Ciudad</label>
+      <input
+        type="text"
+        class="form-control border border-secondary"
+        id="inputCity"
+      />
+    </div>
+    <div class="col-12 d-flex justify-content-center mt-4">
+      <button type="submit" class="btn btn-primary sign-in">Sign in</button>
+    </div>
+    <div class="banner-registrar mt-5 d-flex justify-content-center">
+      <div>
+        Don't have an account?
+        <button type="submit" class="btn btn-success" (click)="loginEnviar()">
+          Log in
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

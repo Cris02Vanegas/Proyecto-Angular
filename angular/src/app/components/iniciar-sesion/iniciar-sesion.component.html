@@ -1,53 +1,47 @@
-<!-- <form
-  [formGroup]="formulariocredenciales"
-  (ngSubmit)="manejarEnvio()"
-  class="border border-primary p-4"
->
-  <legend>Iniciar Sesión</legend>
-  <div class="mb-3">
-    <input
-      class="border border-secondary"
-      type="text"
-      placeholder="Usuario"
-      formControlName="usuario"
-    />
-  </div>
-  <div class="mb-3">
-    <input
-      class="border border-secondary"
-      type="password"
-      placeholder="Contraseña"
-      formControlName="password"
-    />
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
+<div class="d-lg-flex justify-content-center">
+  <form
+    [formGroup]="formulariocredenciales"
+    (ngSubmit)="manejarEnvio()"
+    class="py-5 col-lg-6"
+  >
+    <div class="mb-4">
+      <img src="../../../assets/login.png" alt="logi-ico" />
+      <div class="fw-bold fs-4 text">Log In</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label fw-semibold"
+        >Usuario</label
+      >
+      <input
+        type="text"
+        class="form-control border border-secondary"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="usuario"
+        formControlName="usuario"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label fw-semibold"
+        >Password</label
+      >
+      <input
+        type="password"
+        class="form-control border border-secondary"
+        id="exampleInputPassword1"
+        placeholder="password"
+        formControlName="password"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Log In</button>
 
-<form
-  [formGroup]="formulariocredenciales"
-  (ngSubmit)="manejarEnvio()"
-  class="border border-primary p-4"
->
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Usuario</label>
-    <input
-      type="text"
-      class="form-control"
-      id="exampleInputEmail1"
-      aria-describedby="emailHelp"
-      placeholder="usuario"
-      formControlName="usuario"
-    />
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input
-      type="password"
-      class="form-control"
-      id="exampleInputPassword1"
-      placeholder="password"
-      formControlName="password"
-    />
-  </div>
-  <button type="submit" class="btn btn-primary">Login</button>
-</form>
+    <div class="banner-registrar mt-5">
+      <div>
+        Don't have an account?
+        <button type="submit" class="btn btn-success" (click)="signUpEnvio()">
+          Sign Up
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

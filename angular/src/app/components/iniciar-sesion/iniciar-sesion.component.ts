@@ -1,27 +1,25 @@
 import { Component, inject } from '@angular/core';
 import {
-  FormsModule,
   ReactiveFormsModule,
   FormGroup,
   FormControl,
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { ToastrService } from 'ngx-toastr';
 import { Interfaces } from '../../interfaces/interfaces';
 import { LoginService } from '../../services/login.service';
-
-const jwtHelperService = new JwtHelperService();
 
 @Component({
   selector: 'app-iniciar-sesion',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './iniciar-sesion.component.html',
   styleUrl: './iniciar-sesion.component.css',
 })
 export class IniciarSesionComponent {
   router = inject(Router);
+  toastService = inject(ToastrService);
   loginService: LoginService = inject(LoginService);
 
   formulariocredenciales = new FormGroup({
@@ -40,15 +38,20 @@ export class IniciarSesionComponent {
           password,
         };
         this.loginService.login(credenciales).subscribe((respuesta: any) => {
-          /* console.log('Respuesta: ', respuesta); */
-          const decoded = jwtHelperService.decodeToken(respuesta.datos.token);
-          /* console.log('decode: ', decoded); */
-          localStorage.setItem('token', respuesta.datos.token);
-          this.router.navigateByUrl('/privado');
+          if (respuesta.resultado == 'bien') {
+            localStorage.setItem('token', respuesta.datos.token);
+            this.router.navigateByUrl('/privado');
+          } else {
+            this.toastService.warning('Credenciales erroneos');
+          }
         });
       }
     } else {
-      console.log('Sin datos');
+      this.toastService.warning('Todos los campos son obligatorios');
     }
+  }
+
+  signUpEnvio() {
+    this.router.navigateByUrl('/registrarse');
   }
 }
