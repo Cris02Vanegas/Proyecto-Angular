@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Interfaces } from '../../interfaces/interfaces';
 import { LoginService } from '../../services/login.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-iniciar-sesion',

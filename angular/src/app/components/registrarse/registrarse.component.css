@@ -12,3 +12,21 @@ form {
 .sign-in {
   width: 70%;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 991px) {
+  .container {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1536px) {
+  .container {
+    margin: 100px 0 0 90px;
+  }
+}
+
+@media only screen and (min-width: 1537px) {
+  .container {
+    margin: 70px 0 0 120px;
+  }
+}

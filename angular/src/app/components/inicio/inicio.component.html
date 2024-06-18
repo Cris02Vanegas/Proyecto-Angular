@@ -1,8 +1,4 @@
-<div
-  id="slider-banner"
-  class="carousel carousel-dark slide"
-  data-bs-ride="carousel"
->
+<div id="slider-banner" class="carousel carousel-dark slide">
   <div class="carousel-indicators">
     <button
       type="button"
@@ -58,10 +54,10 @@
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
       <img src="../../../assets/pic01.jpg" class="d-block w-100" alt="pic01" />
-      <div class="carousel-caption banner-inicio d-none d-md-block">
+      <div class="carousel-caption banner-inicio d-none d-sm-block d-md-block">
         <h1>Hola, Bienvenidos a MotoTravels Colombia</h1>
         <hr />
-        <p class="cinzel">
+        <p>
           Somos una empresa dedicada a ofrecer los mejores tours en motocicleta
           dentro del territorio Colombiano, brindandote un servicio VIP y
           Premium, donde tendrás la oportunidad de tener una maravillosa
@@ -71,18 +67,18 @@
       </div>
     </div>
     <div class="carousel-item mision" data-bs-interval="4000">
-      <div class="carousel-caption banner-mision d-none d-md-block">
-        <h2>Misión</h2>
-        <hr />
-        <p>
+      <div
+        class="carousel-caption banner-mision d-none d-sm-block d-md-block d-lg-block"
+      >
+        <h1>Misión</h1>
+        <p class="mb-2">
           Prestar el servicio de tours en motocicleta, brindando a nuestros
           clientes tranquilidad y seguridad que solo nuestro equipo puede
           brindar, para así generar en nuestros viajeros las mejores
           experiencias durante nuestros viajes; Incluyendo servicio de catering,
           hospedaje y todos los seguros necesarios.
         </p>
-        <h2>Visión</h2>
-        <hr />
+        <h1>Visión</h1>
         <p>
           Posicionarnos como la mejor empresa que por medio de la innovación
           promueve las mejores vivencias turísticas viajando directamente con tu
@@ -96,9 +92,10 @@
         class="d-block w-100 img-servicios"
         alt="servicios"
       />
-      <div class="carousel-caption banner-servicios d-none d-md-block">
+      <div
+        class="carousel-caption banner-servicios d-sm-block d-md-block d-lg-block"
+      >
         <h1>Nuestros Servicios</h1>
-        <hr />
         <p>
           Tours guíados a diferentes destinos dentro del territorio Colombiano,
           en donde podrás vivir la experiencia de conocer lugares fascinantes
@@ -113,8 +110,11 @@
     </div>
     <div class="carousel-item" data-bs-interval="4000">
       <img src="../../../assets/pic03.jpg" class="d-block w-100" alt="pic03" />
-      <div class="carousel-caption banner-santamarta d-none d-md-block">
-        <h2>Tour Punta Gallinas</h2>
+      <div
+        class="carousel-caption banner-santamarta d-sm-block d-md-block d-lg-block"
+      >
+        <h1 class="fs-3 m-0">Tour Punta Gallinas</h1>
+        <hr />
         <p>
           8 días de aventura, partiendo desde Bogotá hacia el punto norte final
           de Suramérica, contamos con guías y vehículos de apoyo para recorrer
@@ -126,8 +126,10 @@
     </div>
     <div class="carousel-item" data-bs-interval="4000">
       <img src="../../../assets/pic04.jpg" class="d-block w-100" alt="pic04" />
-      <div class="carousel-caption banner-tayrona d-none d-md-block">
-        <h1>Tour Cascada Fin del Mundo</h1>
+      <div
+        class="carousel-caption banner-tayrona d-sm-block d-md-block d-lg-block"
+      >
+        <h1 class="fs-3">Tour Cascada Fin del Mundo</h1>
         <hr />
         <p>
           En este tour recorremos las maravillas naturales de la selva del
@@ -140,8 +142,10 @@
     </div>
     <div class="carousel-item" data-bs-interval="4000">
       <img src="../../../assets/pic07.jpg" class="d-block w-100" alt="pic07" />
-      <div class="carousel-caption banner-minca d-none d-md-block">
-        <h1>Tour Desierto de la Tatacoa</h1>
+      <div
+        class="carousel-caption banner-minca d-sm-block d-md-block d-lg-block"
+      >
+        <h1 class="fs-3">Tour Desierto de la Tatacoa</h1>
         <hr />
         <p>
           Salida desde la ciudad de Bogotá hacia el desierto de la Tatacoa en el
@@ -154,8 +158,10 @@
     </div>
     <div class="carousel-item" data-bs-interval="4000">
       <img src="../../../assets/pic08.jpg" class="d-block w-100" alt="pic08" />
-      <div class="carousel-caption banner-palomino d-none d-md-block">
-        <h1>Tour Los Nevados</h1>
+      <div
+        class="carousel-caption banner-palomino d-sm-block d-md-block d-lg-block"
+      >
+        <h1 class="fs-3">Tour Los Nevados</h1>
         <hr />
         <p>
           Conoce la tranquilidad en un emocionante recorrido desde la ciudad de
@@ -168,13 +174,15 @@
       </div>
     </div>
     <div class="carousel-item contacto">
-      <div class="carousel-caption banner-contacto d-none d-md-block">
+      <div
+        class="carousel-caption banner-contacto d-sm-block d-md-block d-lg-block"
+      >
         <div class="container-contactanos">
           <div class="contacto-p">
-            <h2>Contáctenos</h2>
+            <h1>Contáctenos</h1>
             <p>
               ¡Diligencia el formulario y pronto un agente de nuestro equipo se
-              pondrá en contacto contigo!
+              comunicará contigo!
             </p>
           </div>
           <form
@@ -183,11 +191,11 @@
             class="form-contact"
           >
             <div class="fields">
-              <div class="mb-3 d-flex flex-column text-start">
+              <div class="mb-2 d-flex flex-column text-start">
                 <label class="mb-2 text-light fw-bold" for="name">Nombre</label>
                 <input class="border" type="text" formControlName="nombre" />
               </div>
-              <div class="mb-3 d-flex flex-column text-start">
+              <div class="mb-2 d-flex flex-column text-start">
                 <label class="mb-2 text-light fw-bold" for="email"
                   >Correo Electrónico</label
                 >
