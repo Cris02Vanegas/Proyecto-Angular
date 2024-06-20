@@ -33,7 +33,7 @@ export class LoginService {
   }
 
   logOut() {
-    this.toastService.info('Adios!!');
+    this.toastService.info('Sesión Cerrada');
     localStorage.removeItem('token');
     this.router.navigate(['/inicio']);
   }

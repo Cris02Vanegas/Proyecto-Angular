@@ -40,7 +40,7 @@ img {
 }
 
 .carousel {
-  width: 30%;
+  width: 40%;
 }
 
 .texto_productos {
@@ -159,5 +159,10 @@ img {
 @media only screen and (min-width: 1201px) {
   .container {
     margin-left: 150px;
+  }
+
+  img {
+    margin-top: 30px;
+    border-radius: 10px;
   }
 }

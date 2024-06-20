@@ -1,0 +1,9 @@
+.card-body > p {
+  color: black;
+}
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
