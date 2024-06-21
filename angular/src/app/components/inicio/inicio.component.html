@@ -183,7 +183,7 @@
       >
         <div class="container-contactanos">
           <div class="contacto-p">
-            <h1>Contáctenos</h1>
+            <h1 class="text-black">Contáctenos</h1>
             <p>
               ¡Diligencia el formulario y pronto un agente de nuestro equipo se
               comunicará contigo!
@@ -196,18 +196,18 @@
           >
             <div class="fields">
               <div class="mb-2 d-flex flex-column text-start">
-                <label class="mb-2 text-light fw-bold" for="name">Nombre</label>
+                <label class="mb-2 text-black fw-bold" for="name">Nombre</label>
                 <input class="border" type="text" formControlName="nombre" />
               </div>
               <div class="mb-2 d-flex flex-column text-start">
-                <label class="mb-2 text-light fw-bold" for="email"
+                <label class="mb-2 text-black fw-bold" for="email"
                   >Correo Electrónico</label
                 >
                 <input class="border" type="email" formControlName="email" />
               </div>
             </div>
             <div class="d-flex flex-column text-start">
-              <label class="mb-2 text-light fw-bold" for="message"
+              <label class="mb-2 text-black fw-bold" for="message"
                 >Mensaje</label
               >
               <textarea
@@ -217,7 +217,10 @@
                 formControlName="mensaje"
               ></textarea>
             </div>
-            <button type="submit" class="btn btn-light mt-3">
+            <button
+              type="submit"
+              class="btn btn-warning mt-3 text-white fw-semibold"
+            >
               Enviar Mensaje
             </button>
           </form>

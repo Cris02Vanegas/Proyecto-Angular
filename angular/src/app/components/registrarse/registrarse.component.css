@@ -1,16 +1,22 @@
 form {
-  background-color: white;
   padding: 10px 40px 30px 40px;
   border-radius: 20px;
+  backdrop-filter: blur(15px);
 }
 
 .logo {
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 
 .sign-in {
   width: 70%;
+}
+
+label {
+  color: black;
+  font-weight: 600;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 991px) {
@@ -27,12 +33,34 @@ form {
 
 @media only screen and (min-width: 1201px) and (max-width: 1536px) {
   .container {
-    margin: 70px 0 0 100px;
+    margin: 0 0 0 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px 20px 20px;
+    width: 60%;
   }
 }
 
 @media only screen and (min-width: 1537px) {
   .container {
-    margin: 70px 0 0 180px;
+    margin: 70px 0 0 270px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px 20px 20px;
+    width: 60%;
   }
 }

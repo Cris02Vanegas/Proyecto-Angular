@@ -17,34 +17,47 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active me-3" routerLink="/inicio">Inicio</a>
-          <a class="nav-link me-3" routerLink="/productos">Productos</a>
-          <a class="nav-link me-3" routerLink="/contacto">Contacto</a>
-          <a class="nav-link me-3" routerLink="/privado">MotoTravels</a>
+          <a class="nav-link active me-3 text-warning" routerLink="/inicio"
+            >Inicio</a
+          >
+          <a class="nav-link me-3 text-warning" routerLink="/productos"
+            >Productos</a
+          >
+          <a class="nav-link me-3 text-warning" routerLink="/contacto"
+            >Contacto</a
+          >
+          <a class="nav-link me-3 text-warning" routerLink="/privado"
+            >MotoTravels</a
+          >
         </div>
       </div>
     </div>
   </nav>
   <div class="banner-login">
     <div class="me-2">
-      <button class="btn btn-outline-success text-white">
+      @if (loginService.isLogin()) {
+      <button hidden class="btn btn-warning text-white">
         <a class="nav-link" routerLink="/registrarse">SignUp</a>
       </button>
+      }@else {
+      <button class="btn btn-warning text-white">
+        <a class="nav-link" routerLink="/registrarse">SignUp</a>
+      </button>
+      }
     </div>
     <div class="me-2">
       @if (loginService.isLogin()) {
       <button
         type="button"
-        class="btn btn-outline-success text-white p-1"
+        class="btn btn-warning text-white p-1"
         (click)="loginService.logOut()"
       >
         LogOut
       </button>
       }@else {
-      <button class="btn btn-outline-success text-white">
+      <button class="btn btn-warning text-white">
         <a class="nav-link" routerLink="/iniciar-sesion">Login</a>
       </button>
-
       }
     </div>
   </div>

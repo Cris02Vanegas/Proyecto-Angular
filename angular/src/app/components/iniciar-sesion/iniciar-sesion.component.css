@@ -1,8 +1,11 @@
+.banner-principal {
+  backdrop-filter: blur(15px);
+}
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
   padding: 60px 60px 30px 60px;
   border-radius: 20px;
 }
@@ -28,6 +31,15 @@ form {
 @media only screen and (min-width: 1201px) {
   .banner-principal {
     margin-top: 40px;
-    margin-left: 270px;
+    margin-left: 520px;
+    width: 30%;
+  }
+
+  form {
+    padding: 20px 0 30px 0;
+    width: 150%;
+  }
+
+  .banner-registrar {
   }
 }

@@ -1,28 +1,94 @@
 import { Component, inject } from '@angular/core';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+  FormGroup,
+  FormControl,
+  Validators,
+} from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from '../../services/login.service';
+import { ReservaService } from '../../services/reserva.service';
 
 @Component({
   selector: 'app-privado',
   standalone: true,
-  imports: [NgIf],
+  imports: [FormsModule, ReactiveFormsModule, NgIf],
   templateUrl: './privado.component.html',
   styleUrl: './privado.component.css',
 })
 export class PrivadoComponent {
   loginService = inject(LoginService);
   toastService = inject(ToastrService);
+  reservaService = inject(ReservaService);
+
+  name: string = '';
 
   nombre: string = '';
+  tipoDocumento: string = '';
+  documento: Number = 0;
+  fechaNacimiento: any;
+  planViaje: any;
+  fechaViaje: any;
+  email: string = '';
+  numeroEmergencia: Number = 0;
+  imagen: File | null = null;
+  marca: string = '';
+  modelo: string = '';
+  anio: Number = 0;
+  cilindraje: Number = 0;
+  fechaRTM: any;
+  fechaSoat: any;
+  fechaTDR: any;
+
+  inputFile(event: any) {
+    console.log(this.inputFile);
+    if (event.target.files && event.target.files[0]) {
+      this.imagen = event.target.files[0];
+    }
+  }
+
+  enviarReserva() {
+    if (this.imagen) {
+      this.reservaService
+        .createReserva(
+          this.nombre,
+          this.tipoDocumento,
+          this.documento,
+          this.fechaNacimiento,
+          this.planViaje,
+          this.fechaViaje,
+          this.email,
+          this.numeroEmergencia,
+          this.imagen,
+          this.marca,
+          this.modelo,
+          this.anio,
+          this.cilindraje,
+          this.fechaRTM,
+          this.fechaSoat,
+          this.fechaTDR
+        )
+        .subscribe((respuesta: any) => {
+          if (respuesta.resultado === 'Bien') {
+            this.toastService.success(respuesta.mensaje);
+          } else {
+            this.toastService.error('An error ocurred');
+          }
+        });
+    } else {
+      this.toastService.warning('All fields are required');
+    }
+  }
 
   ngOnInit() {
     const token: any = localStorage.getItem('token');
     if (token) {
       this.loginService.validarToken(token).subscribe((response: any) => {
         if (response.resultado === 'bien') {
-          this.nombre = response.datos.decodificado.name;
-          this.toastService.success(`hello, ${this.nombre}`);
+          this.name = response.datos.decodificado.name;
+          this.toastService.success(`hello, ${this.name}`);
         } else {
           this.loginService.logOut();
         }

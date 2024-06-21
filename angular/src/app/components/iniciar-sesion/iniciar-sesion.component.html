@@ -5,7 +5,7 @@
     class="col-lg-6 needs-validation"
   >
     <div class="mb-4">
-      <img src="../../../assets/login.png" alt="logi-ico" />
+      <img class="logo" src="../../../assets/login.png" alt="logi-ico" />
       <div class="fw-bold fs-4 text">Login</div>
     </div>
     <div class="mb-3">
@@ -17,7 +17,6 @@
         class="form-control border border-secondary"
         id="exampleInputEmail1"
         aria-describedby="emailHelp"
-        placeholder="usuario"
         formControlName="usuario"
       />
     </div>
@@ -29,16 +28,21 @@
         type="password"
         class="form-control border border-secondary"
         id="exampleInputPassword1"
-        placeholder="password"
         formControlName="password"
       />
     </div>
-    <button type="submit" class="btn btn-primary">Log In</button>
+    <button type="submit" class="btn btn-warning text-white fw-semibold">
+      Log In
+    </button>
 
     <div class="banner-registrar mt-5">
-      <div>
+      <div class="text-white fw-semibold">
         Don't have an account?
-        <button type="submit" class="btn btn-success" (click)="signUpEnvio()">
+        <button
+          type="submit"
+          class="btn btn-success fw-semibold"
+          (click)="signUpEnvio()"
+        >
           Sign Up
         </button>
       </div>

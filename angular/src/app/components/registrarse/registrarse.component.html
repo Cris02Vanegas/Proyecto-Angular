@@ -1,64 +1,65 @@
 <div class="container">
-  <form class="row g-3 d-flex">
+  <form
+    [formGroup]="formularioRegistro"
+    (ngSubmit)="enviarRegistro()"
+    class="row g-3 d-flex"
+  >
     <div class="logo">
       <img src="../../../assets/login.png" alt="logi-ico" />
     </div>
     <div class="fw-bold fs-4 d-flex justify-content-center">Sign Up</div>
     <div class="col-lg-6">
+      <label for="inputNombre4">Username</label>
       <input
         type="text"
         class="form-control border border-secondary"
-        id="inputEmail4"
-        placeholder="Nombre"
+        id="inputNombre4"
+        formControlName="nombre"
       />
     </div>
     <div class="col-lg-6">
-      <input
-        type="text"
-        class="form-control border border-secondary"
-        id="inputPassword4"
-        placeholder="Usuario"
-      />
-    </div>
-    <div class="col-lg-6">
+      <label for="inputEmail4">Email</label>
       <input
         type="email"
         class="form-control border border-secondary"
         id="inputEmail4"
-        placeholder="Email"
+        formControlName="correo"
       />
     </div>
     <div class="col-lg-6">
+      <label for="inputPassword4">Contraseña</label>
       <input
         type="password"
         class="form-control border border-secondary"
         id="inputPassword4"
-        placeholder="Password"
+        formControlName="contrasenia"
       />
     </div>
     <div class="col-lg-6">
+      <label for="inputAddress">Teléfono</label>
       <input
         type="text"
         class="form-control border border-secondary"
         id="inputAddress"
-        placeholder="Teléfono"
+        formControlName="telefono"
       />
     </div>
-    <div class="col-lg-6">
-      <input
-        type="text"
-        class="form-control border border-secondary"
-        id="inputCity"
-        placeholder="Ciudad"
-      />
-    </div>
-    <div class="col-12 d-flex justify-content-center mt-4">
-      <button type="submit" class="btn btn-primary sign-in">Sign in</button>
+    <div class="col-xxl-6 d-flex justify-content-center mt-4">
+      <button
+        type="submit"
+        class="btn btn-warning text-white fw-semibold sign-in"
+      >
+        Sign Up
+      </button>
     </div>
     <div class="banner-registrar mt-5 d-flex justify-content-center">
-      <div>
+      <div class="text-white fw-semibold">
         Don't have an account?
-        <button type="submit" class="btn btn-success" (click)="loginEnviar()">
+        <button
+          type="submit"
+          class="btn btn-success fw-semibold"
+          (click)="loginEnviar()"
+        >
           Log in
         </button>
       </div>

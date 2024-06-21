@@ -6,8 +6,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Contactenos } from '../../interfaces/interfaces';
 import { HeaderComponent } from '../header/header.component';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-inicio',
@@ -18,6 +20,8 @@ import { HeaderComponent } from '../header/header.component';
 })
 export class InicioComponent {
   router = inject(Router);
+  toastService = inject(ToastrService);
+  contactService: ContactService = inject(ContactService);
 
   formularioContacto = new FormGroup({
     nombre: new FormControl('', Validators.required),
@@ -26,6 +30,29 @@ export class InicioComponent {
   });
 
   envioContacto() {
-    this.router.navigateByUrl('/contacto');
+    if (this.formularioContacto.valid) {
+      const nombre = this.formularioContacto.value.nombre;
+      const email = this.formularioContacto.value.email;
+      const mensaje = this.formularioContacto.value.mensaje;
+
+      if (
+        typeof nombre === 'string' &&
+        typeof email === 'string' &&
+        typeof mensaje === 'string'
+      ) {
+        const credenciales: Contactenos = {
+          nombre,
+          email,
+          mensaje,
+        };
+        this.contactService.login(credenciales).subscribe((respuesta: any) => {
+          if (respuesta.resultado == 'Bien') {
+            this.router.navigateByUrl('/contacto');
+          }
+        });
+      }
+    } else {
+      this.toastService.warning('Todos los campos son obligatorios');
+    }
   }
 }
