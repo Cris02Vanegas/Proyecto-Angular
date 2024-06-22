@@ -7,6 +7,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { PrivadoComponent } from './components/privado/privado.component';
+import { ReservaComponent } from './components/reserva/reserva.component';
 import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
 
 export const routes: Routes = [
@@ -47,6 +48,12 @@ export const routes: Routes = [
     component: PrivadoComponent,
     canActivate: [activateGuard],
     title: 'Moto Travels Colombia',
+  },
+
+  {
+    path: 'reserva',
+    component: ReservaComponent,
+    title: 'Reserva',
   },
 
   {

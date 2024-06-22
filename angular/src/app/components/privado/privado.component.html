@@ -1,5 +1,7 @@
 <p>Hola, {{ name }}</p>
-<a href="#formulario1">Hacer Reserva</a>
+<a class="nav-link active me-3 text-warning" routerLink="/reserva"
+  >Ir a Reservas</a
+>
 <div class="container">
   <h1 class="text-warning text-decoration-underline">RESERVA TU DESTINO</h1>
   <div class="banner">
@@ -19,13 +21,59 @@
       </div>
       <button
         href=""
-        class="btn btn-primary button"
+        class="btn btn-warning mb-3 text-white button"
         (click)="mostrarOcultarInfo1()"
       >
         {{ mensaje_enlace }}
       </button>
     </div>
-
+    <div class="banner-info" *ngIf="mostrar">
+      <div class="divInformacion">
+        <h2>Descripción</h2>
+        <p class="dark">
+          Este tour esta dirigido para riders que cuenten con motocicleta de
+          650cc en adelante debido a la distancia del recorrido (1218km aprox.)
+          durante el recorrido en la alta Guajira contamos con guías locales y
+          vehículos de apoyo para evitar contratiempos que se puedan presentar
+          por la dificultad del terreno.
+        </p>
+        <h2>Recorrido</h2>
+        <p class="dark">
+          Saldremos desde la ciudad de Bogotá, por la via ruta del sol hacía el
+          cesar, en nuestra ruta cruzaremos por Mompox, Cabo de la Vela, Punta
+          Gallinas, Mayapo y Riohacha.
+        </p>
+        <h2>Qué Incluye</h2>
+        <ul>
+          <li>8 días, 7 noches de hospedaje en acomodación doble</li>
+          <li>Desayunos y almuerzos incluídos</li>
+          <li>Guías durante el recorrido</li>
+          <li>Vehículos de apoyo en caso de emergencia con paramédicos</li>
+          <li>Seguro de viaje</li>
+          <li>Dirigido a motos de 650cc en adelante</li>
+        </ul>
+        <h2>Fechas Disponibles</h2>
+        <ol>
+          <li>16 al 23 de Agosto 2024</li>
+          <li>11 al 18 de Octubre 2024</li>
+          <li>6 al 13 de Diciembre 2024</li>
+        </ol>
+        <h2>Costos</h2>
+        <ul>
+          <li>Costo individual: 3.500.000 COP</li>
+          <li>Costo por pareja: 6.500.000 COP</li>
+        </ul>
+        <div class="banner-boton">
+          <button
+            class="btn btn-warning mb-3 text-white text-white boton-reserva"
+            (click)="scroll(elemento)"
+          >
+            Reserva aqui
+          </button>
+        </div>
+      </div>
+      <p hidden>{{ mensaje }}</p>
+    </div>
     <!--Informacion 2-->
     <div class="card" style="width: 18rem">
       <img
@@ -43,11 +91,56 @@
       </div>
       <button
         href="#"
-        class="btn btn-primary button"
+        class="btn btn-warning mb-3 text-white button"
         (click)="mostrarOcultarInfo2()"
       >
         {{ mensaje_enlace2 }}
       </button>
+    </div>
+    <div *ngIf="mostrar2">
+      <div class="divInformacion">
+        <h2>Descripción</h2>
+        <p class="dark">
+          Tour dirigido para riders con motocicleta de 250cc en adelante. En
+          este tour tendremos la oportunidad de contar con ruta Off Road 30% y
+          On Road 70% con un nivel de exigencia básico.
+        </p>
+        <h2>Recorrido</h2>
+        <p class="dark">
+          Saldremos desde la ciudad de Bogotá, hasta Murillo en el departamento
+          del Tolima, podremos visitar el imponente Nevado del Ruiz hasta llegar
+          a nuestro destino en Manizalez - Caldas.
+        </p>
+        <h2>Qué Incluye</h2>
+        <ul>
+          <li>2 días, 1 noche de hospedaje en finca ecoturística</li>
+          <li>Desayunos y almuerzos incluídos</li>
+          <li>Guías durante el recorrido</li>
+          <li>Noche de termales en Murillo - Tolima</li>
+          <li>Seguro de viaje</li>
+          <li>Dirigido a motos de 250cc en adelante</li>
+        </ul>
+        <h2>Fechas Disponibles</h2>
+        <ol>
+          <li>27 al 28 de Julio 2024</li>
+          <li>21 al 22 de Septiembre 2024</li>
+          <li>23 al 24 de Noviembre 2024</li>
+        </ol>
+        <h2>Costos</h2>
+        <ul>
+          <li>Costo individual: 800.000 COP</li>
+          <li>Costo por pareja: 1.400.000 COP</li>
+        </ul>
+        <div class="banner-boton">
+          <button
+            class="btn btn-warning mb-3 text-white text-white boton-reserva"
+            (click)="scroll(elemento)"
+          >
+            Reserva aqui
+          </button>
+        </div>
+      </div>
+      <p hidden>{{ mensaje2 }}</p>
     </div>
 
     <!--Informacion 3-->
@@ -67,11 +160,56 @@
       </div>
       <button
         href="#"
-        class="btn btn-primary button"
+        class="btn btn-warning mb-3 text-white button"
         (click)="mostrarOcultarInfo3()"
       >
         {{ mensaje_enlace3 }}
       </button>
+    </div>
+    <div *ngIf="mostrar3">
+      <div class="divInformacion">
+        <h2>Descripción</h2>
+        <p class="dark">
+          En este maravilloso destino rodeado de mucha naturaleza, recorremos
+          los departamentos de Cundinamarca, Tolima, Huila y Putumayo.
+        </p>
+        <h2>Recorrido</h2>
+        <p class="dark">
+          Saldremos desde la ciudad de Bogotá, hasta Mocoa en el departamento
+          del Putumayo, visitaremos la imponenete cascada del fin del mundo,
+          realizaremos una caminata ecológica por el cañon del Mandiyaco y
+          podras disfrutar de su grandiosa gastronomía.
+        </p>
+        <h2>Qué Incluye</h2>
+        <ul>
+          <li>5 días, 4 noches de hospedaje</li>
+          <li>Desayunos y almuerzos incluídos</li>
+          <li>Guías durante el recorrido</li>
+          <li>Ingreso a los destinos naturales</li>
+          <li>Seguro de viaje</li>
+          <li>Dirigido a motos de 250cc en adelante</li>
+        </ul>
+        <h2>Fechas Disponibles</h2>
+        <ol>
+          <li>20 al 25 de Julio 2024</li>
+          <li>31 de Agosto al 4 de Septiembre 2024</li>
+          <li>1 al 5 de Octubre 2024</li>
+        </ol>
+        <h2>Costos</h2>
+        <ul>
+          <li>Costo individual: 1.800.000 COP</li>
+          <li>Costo por pareja: 3.200.000 COP</li>
+        </ul>
+        <div class="banner-boton">
+          <button
+            class="btn btn-warning mb-3 text-white text-white boton-reserva"
+            (click)="scroll(elemento)"
+          >
+            Reserva aqui
+          </button>
+        </div>
+      </div>
+      <p hidden>{{ mensaje3 }}</p>
     </div>
 
     <!--Informacion 4-->
@@ -91,174 +229,66 @@
       </div>
       <button
         href="#"
-        class="btn btn-primary button"
+        class="btn btn-warning mb-3 text-white button"
         (click)="mostrarOcultarInfo4()"
       >
         {{ mensaje_enlace4 }}
       </button>
     </div>
-  </div>
-  <div class="banner-info" *ngIf="mostrar">
-    <div class="divInformacion">
-      <h2>Descripción</h2>
-      <p class="dark">
-        Este tour esta dirigido para riders que cuenten con motocicleta de 650cc
-        en adelante debido a la distancia del recorrido (1218km aprox.) durante
-        el recorrido en la alta Guajira contamos con guías locales y vehículos
-        de apoyo para evitar contratiempos que se puedan presentar por la
-        dificultad del terreno.
-      </p>
-      <h2>Recorrido</h2>
-      <p class="dark">
-        Saldremos desde la ciudad de Bogotá, por la via ruta del sol hacía el
-        cesar, en nuestra ruta cruzaremos por Mompox, Cabo de la Vela, Punta
-        Gallinas, Mayapo y Riohacha.
-      </p>
-      <h2>Qué Incluye</h2>
-      <ul>
-        <li>8 días, 7 noches de hospedaje en acomodación doble</li>
-        <li>Desayunos y almuerzos incluídos</li>
-        <li>Guías durante el recorrido</li>
-        <li>Vehículos de apoyo en caso de emergencia con paramédicos</li>
-        <li>Seguro de viaje</li>
-        <li>Dirigido a motos de 650cc en adelante</li>
-      </ul>
-      <h2>Fechas Disponibles</h2>
-      <ol>
-        <li>16 al 23 de Agosto 2024</li>
-        <li>11 al 18 de Octubre 2024</li>
-        <li>6 al 13 de Diciembre 2024</li>
-      </ol>
-      <h2>Costos</h2>
-      <ul>
-        <li>Costo individual: 3.500.000 COP</li>
-        <li>Costo por pareja: 6.500.000 COP</li>
-      </ul>
+    <div *ngIf="mostrar4">
+      <div class="divInformacion">
+        <h2>Descripción</h2>
+        <p class="dark">
+          Vive esta gran experencia de aventura a bordo de tu moto donde
+          recorrerás 300km, desafiando 120km en ruta off road.
+        </p>
+        <h2>Recorrido</h2>
+        <p class="dark">
+          Saldremos desde la ciudad de Bogotá, cruzando el departamento del
+          Huila hasta llegar al desierto de la Tatacoa, pasando tu motocicleta
+          en ferry por el río Magdalena, disfruta de los paisajes que nos brinda
+          este maravilloso ecosistema que incluye rutas y puentes antiguos.
+        </p>
+        <h2>Qué Incluye</h2>
+        <ul>
+          <li>2 días, 1 noche de hospedaje con acomodación doble</li>
+          <li>Desayunos y almuerzos incluídos</li>
+          <li>Guías durante el recorrido</li>
+          <li>Seguro de viaje</li>
+          <li>Dirigido a motos de 250cc en adelante</li>
+        </ul>
+        <h2>Fechas Disponibles</h2>
+        <ol>
+          <li>7 al 8 de Septiembre 2024</li>
+          <li>26 al 27 de Octubre 2024</li>
+          <li>23 al 24 de Noviembre 2024</li>
+        </ol>
+        <h2>Costos</h2>
+        <ul>
+          <li>Costo individual: 700.000 COP</li>
+          <li>Costo por pareja: 1.200.000 COP</li>
+        </ul>
+        <div class="banner-boton">
+          <button
+            class="btn btn-warning mb-3 text-white text-white boton-reserva"
+            (click)="scroll(elemento)"
+          >
+            Reserva aqui
+          </button>
+        </div>
+      </div>
+      <p hidden>{{ mensaje4 }}</p>
     </div>
-    <p hidden>{{ mensaje }}</p>
-  </div>
-  <div *ngIf="mostrar2">
-    <div class="divInformacion">
-      <h2>Descripción</h2>
-      <p class="dark">
-        Tour dirigido para riders con motocicleta de 250cc en adelante. En este
-        tour tendremos la oportunidad de contar con ruta Off Road 30% y On Road
-        70% con un nivel de exigencia básico.
-      </p>
-      <h2>Recorrido</h2>
-      <p class="dark">
-        Saldremos desde la ciudad de Bogotá, hasta Murillo en el departamento
-        del Tolima, podremos visitar el imponente Nevado del Ruiz hasta llegar a
-        nuestro destino en Manizalez - Caldas.
-      </p>
-      <h2>Qué Incluye</h2>
-      <ul>
-        <li>2 días, 1 noche de hospedaje en finca ecoturística</li>
-        <li>Desayunos y almuerzos incluídos</li>
-        <li>Guías durante el recorrido</li>
-        <li>Noche de termales en Murillo - Tolima</li>
-        <li>Seguro de viaje</li>
-        <li>Dirigido a motos de 250cc en adelante</li>
-      </ul>
-      <h2>Fechas Disponibles</h2>
-      <ol>
-        <li>27 al 28 de Julio 2024</li>
-        <li>21 al 22 de Septiembre 2024</li>
-        <li>23 al 24 de Noviembre 2024</li>
-      </ol>
-      <h2>Costos</h2>
-      <ul>
-        <li>Costo individual: 800.000 COP</li>
-        <li>Costo por pareja: 1.400.000 COP</li>
-      </ul>
-    </div>
-    <p hidden>{{ mensaje2 }}</p>
-  </div>
-
-  <div *ngIf="mostrar3">
-    <div class="divInformacion">
-      <h2>Descripción</h2>
-      <p class="dark">
-        En este maravilloso destino rodeado de mucha naturaleza, recorremos los
-        departamentos de Cundinamarca, Tolima, Huila y Putumayo.
-      </p>
-      <h2>Recorrido</h2>
-      <p class="dark">
-        Saldremos desde la ciudad de Bogotá, hasta Mocoa en el departamento del
-        Putumayo, visitaremos la imponenete cascada del fin del mundo,
-        realizaremos una caminata ecológica por el cañon del Mandiyaco y podras
-        disfrutar de su grandiosa gastronomía.
-      </p>
-      <h2>Qué Incluye</h2>
-      <ul>
-        <li>5 días, 4 noches de hospedaje</li>
-        <li>Desayunos y almuerzos incluídos</li>
-        <li>Guías durante el recorrido</li>
-        <li>Ingreso a los destinos naturales</li>
-        <li>Seguro de viaje</li>
-        <li>Dirigido a motos de 250cc en adelante</li>
-      </ul>
-      <h2>Fechas Disponibles</h2>
-      <ol>
-        <li>20 al 25 de Julio 2024</li>
-        <li>31 de Agosto al 4 de Septiembre 2024</li>
-        <li>1 al 5 de Octubre 2024</li>
-      </ol>
-      <h2>Costos</h2>
-      <ul>
-        <li>Costo individual: 1.800.000 COP</li>
-        <li>Costo por pareja: 3.200.000 COP</li>
-      </ul>
-    </div>
-    <p hidden>{{ mensaje3 }}</p>
-  </div>
-
-  <div *ngIf="mostrar4">
-    <div class="divInformacion">
-      <h2>Descripción</h2>
-      <p class="dark">
-        Vive esta gran experencia de aventura a bordo de tu moto donde
-        recorrerás 300km, desafiando 120km en ruta off road.
-      </p>
-      <h2>Recorrido</h2>
-      <p class="dark">
-        Saldremos desde la ciudad de Bogotá, cruzando el departamento del Huila
-        hasta llegar al desierto de la Tatacoa, pasando tu motocicleta en ferry
-        por el río Magdalena, disfruta de los paisajes que nos brinda este
-        maravilloso ecosistema que incluye rutas y puentes antiguos.
-      </p>
-      <h2>Qué Incluye</h2>
-      <ul>
-        <li>2 días, 1 noche de hospedaje con acomodación doble</li>
-        <li>Desayunos y almuerzos incluídos</li>
-        <li>Guías durante el recorrido</li>
-        <li>Seguro de viaje</li>
-        <li>Dirigido a motos de 250cc en adelante</li>
-      </ul>
-      <h2>Fechas Disponibles</h2>
-      <ol>
-        <li>7 al 8 de Septiembre 2024</li>
-        <li>26 al 27 de Octubre 2024</li>
-        <li>23 al 24 de Noviembre 2024</li>
-      </ol>
-      <h2>Costos</h2>
-      <ul>
-        <li>Costo individual: 700.000 COP</li>
-        <li>Costo por pareja: 1.200.000 COP</li>
-      </ul>
-    </div>
-    <p hidden>{{ mensaje4 }}</p>
   </div>
 
   <!--Formulario-->
 
-  <div class="banner-formulario">
+  <div class="banner-formulario" #elemento>
     <h1 class="text-white mb-4 text-center">Datos del viajero</h1>
     <form
-      (ngSubmit)="enviarReserva()"
+      (ngSubmit)="enviarReserva(heroForm)"
       #heroForm="ngForm"
       class="row g-3"
-      id="formulario1"
     >
       <div class="col-md-12 col-xl-6">
         <label for="inputPassword4" class="form-label">Nombre</label>

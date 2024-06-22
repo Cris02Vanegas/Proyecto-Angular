@@ -5,7 +5,9 @@ import {
   FormGroup,
   FormControl,
   Validators,
+  NgForm,
 } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from '../../services/login.service';
@@ -14,7 +16,7 @@ import { ReservaService } from '../../services/reserva.service';
 @Component({
   selector: 'app-privado',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgIf],
+  imports: [FormsModule, ReactiveFormsModule, RouterLink, NgIf],
   templateUrl: './privado.component.html',
   styleUrl: './privado.component.css',
 })
@@ -22,6 +24,10 @@ export class PrivadoComponent {
   loginService = inject(LoginService);
   toastService = inject(ToastrService);
   reservaService = inject(ReservaService);
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+  }
 
   name: string = '';
 
@@ -49,7 +55,7 @@ export class PrivadoComponent {
     }
   }
 
-  enviarReserva() {
+  enviarReserva(heroForm: NgForm) {
     if (this.imagen) {
       this.reservaService
         .createReserva(
@@ -73,6 +79,7 @@ export class PrivadoComponent {
         .subscribe((respuesta: any) => {
           if (respuesta.resultado === 'Bien') {
             this.toastService.success(respuesta.mensaje);
+            heroForm.reset();
           } else {
             this.toastService.error('An error ocurred');
           }

@@ -4,21 +4,46 @@
   align-items: center;
 }
 
+.boton-reserva {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.banner-boton {
+  display: flex;
+  justify-content: center;
+}
+
 .banner {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card {
   margin-bottom: 20px;
   align-items: center;
+  color: white;
+  background: transparent;
+  background-image: linear-gradient(
+    -90deg,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.card-body > h5 {
+  text-align: center;
 }
 
 .card-body > p {
-  color: black;
+  color: white;
   text-align: justify;
 }
 
 .divInformacion {
+  margin-bottom: 20px;
   font-size: large;
   padding: 2% 2% 2% 2%;
   height: auto;
@@ -30,6 +55,10 @@
   );
 }
 
+.divInformacion > p {
+  text-align: justify;
+}
+
 h2 {
   color: white;
   text-align: center;
@@ -39,57 +68,6 @@ li,
 ol,
 ul {
   color: white;
-}
-
-.button {
-  background: black;
-  cursor: pointer;
-  border: none;
-  padding: 8px 28px;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  position: relative;
-  border-radius: 12px;
-  margin-bottom: 10px;
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    45deg,
-    red,
-    blue,
-    deeppink,
-    blue,
-    white,
-    green,
-    violet,
-    blue
-  );
-
-  background-size: 800%;
-  border-radius: 10px;
-  filter: blur(8px);
-  animation: glowing 20s linear infinite;
-}
-
-@keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
 }
 
 .banner-formulario {
@@ -106,7 +84,7 @@ label {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .banner {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
@@ -119,7 +97,7 @@ label {
   }
 
   .banner {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
@@ -132,7 +110,7 @@ label {
   }
 
   .banner {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
