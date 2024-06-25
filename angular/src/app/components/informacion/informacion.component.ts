@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ReservaService } from '../../services/reserva.service';
 import { ToastrService } from 'ngx-toastr';
@@ -8,7 +9,7 @@ import { ReservaComponent } from '../reserva/reserva.component';
 @Component({
   selector: 'app-informacion',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './informacion.component.html',
   styleUrl: './informacion.component.css',
 })
@@ -22,6 +23,11 @@ export class InformacionComponent {
 
   verReserva() {
     this.reservaSeleccionada.emit(this.reservas);
+  }
+
+  ngOnInit() {
+    const datos = localStorage.getItem('temporal');
+    console.log(datos);
   }
   /*  toastService = inject(ToastrService);
   loginService = inject(LoginService);
@@ -39,7 +45,7 @@ export class InformacionComponent {
     });
   }
 
-  ngOnInit() {
+  /*ngOnInit() {
     const token: any = localStorage.getItem('token');
     if (token) {
       this.loginService.validarToken(token).subscribe((response: any) => {

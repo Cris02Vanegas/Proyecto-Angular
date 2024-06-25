@@ -46,7 +46,9 @@ export class ReservaComponent {
     this.reservaService.getReservasInfo(id).subscribe((response: any) => {
       if (response.resultado === 'Bien') {
         this.reservas = response.datos;
+        localStorage.setItem('temporal', 'abc');
         this.router.navigateByUrl('/informacion');
+
         console.log(this.reservas);
       } else {
         this.toastService.error('An error ocurred');
