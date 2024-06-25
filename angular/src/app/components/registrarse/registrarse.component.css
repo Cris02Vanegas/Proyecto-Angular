@@ -21,19 +21,20 @@ label {
 
 @media only screen and (min-width: 320px) and (max-width: 991px) {
   .container {
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .container {
-    margin: 100px 0 0 90px;
+    margin: 100px 0 70px 90px;
   }
 }
 
 @media only screen and (min-width: 1201px) and (max-width: 1536px) {
   .container {
-    margin: 0 0 0 100px;
+    margin: 0 0 20px 120px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -50,7 +51,7 @@ label {
 
 @media only screen and (min-width: 1537px) {
   .container {
-    margin: 70px 0 0 270px;
+    margin: 70px 0 30px 300px;
     width: 100%;
     display: flex;
     justify-content: center;

@@ -2,13 +2,13 @@ import { Routes } from '@angular/router';
 import { activateGuard } from './guards/activate.guard';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ProductosComponent } from './components/productos/productos.component';
-import { ServiciosComponent } from './components/servicios/servicios.component';
-import { ContactoComponent } from './components/contacto/contacto.component';
+import { ExperienciasComponent } from './components/experiencias/experiencias.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { PrivadoComponent } from './components/privado/privado.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
+import { InformacionComponent } from './components/informacion/informacion.component';
 
 export const routes: Routes = [
   {
@@ -24,14 +24,9 @@ export const routes: Routes = [
   },
 
   {
-    path: 'servicios',
-    component: ServiciosComponent,
-    title: 'Servicios',
-  },
-  {
-    path: 'contacto',
-    component: ContactoComponent,
-    title: 'Contacto',
+    path: 'experiencias',
+    component: ExperienciasComponent,
+    title: 'Experiencias',
   },
   {
     path: 'registrarse',
@@ -54,6 +49,12 @@ export const routes: Routes = [
     path: 'reserva',
     component: ReservaComponent,
     title: 'Reserva',
+  },
+
+  {
+    path: 'informacion',
+    component: InformacionComponent,
+    title: 'Informacion',
   },
 
   {

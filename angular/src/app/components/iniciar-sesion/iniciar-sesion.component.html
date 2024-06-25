@@ -1,8 +1,8 @@
-<div class="d-lg-flex justify-content-center banner-principal">
+<div class="banner-principal">
   <form
     [formGroup]="formulariocredenciales"
     (ngSubmit)="manejarEnvio()"
-    class="col-lg-6 needs-validation"
+    class="needs-validation"
   >
     <div class="mb-4">
       <img class="logo" src="../../../assets/login.png" alt="logi-ico" />
@@ -36,8 +36,8 @@
     </button>
 
     <div class="banner-registrar mt-5">
-      <div class="text-white fw-semibold">
-        Don't have an account?
+      <div class="text-white fw-semibold banner">
+        <span>Don't have an account?</span>
         <button
           type="submit"
           class="btn btn-success fw-semibold"

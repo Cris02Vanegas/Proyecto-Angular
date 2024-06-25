@@ -1,0 +1,21 @@
+<p>works</p>
+@for (datos of reservas; track $index) {
+<ol class="list-group list-group-numbered">
+  <li class="list-group-item">Nombre: {{ datos.nombre }}</li>
+  <li class="list-group-item">Tipo Docuemnto: {{ datos.tipoDocumento }}</li>
+  <li class="list-group-item">Documento: {{ datos.documento }}</li>
+  <li class="list-group-item">FechaNacimiento: {{ datos.fechaNacimiento }}</li>
+  <li class="list-group-item">PlanViaje: {{ datos.planViaje }}</li>
+  <li class="list-group-item">FechaViaje: {{ datos.fechaViaje }}</li>
+  <li class="list-group-item">
+    NumeroEmergencia: {{ datos.numeroEmergencia }}
+  </li>
+  <li class="list-group-item">Marca: {{ datos.marca }}</li>
+  <li class="list-group-item">Modelo: {{ datos.modelo }}</li>
+  <li class="list-group-item">Año: {{ datos.anio }}</li>
+  <li class="list-group-item">cilindraje: {{ datos.cilindraje }}</li>
+  <li class="list-group-item">fechaRTM: {{ datos.fechaRTM }}</li>
+  <li class="list-group-item">FechaSoat: {{ datos.fechaSoat }}</li>
+  <li class="list-group-item">FechaTDR: {{ datos.fechaTDR }}</li>
+</ol>
+}

@@ -122,6 +122,7 @@ textarea {
 
 input,
 textarea {
+  border-radius: 10px;
   font-size: 14px;
   padding: 10px;
   opacity: 0.7;
@@ -131,13 +132,17 @@ textarea {
 
 @media only screen and (min-width: 320px) and (max-width: 575px) {
   #slider-banner {
-    margin: 10px 0 35px 0;
+    margin: 80px 0 35px 0;
+    height: 500px;
   }
 
-  img,
+  img {
+    height: 500px;
+  }
+
   .mision,
   .contacto {
-    height: 450px;
+    height: 500px;
   }
 
   hr {
@@ -185,7 +190,7 @@ textarea {
     align-content: center;
     display: block !important;
     margin-bottom: 0;
-    padding: 10px;
+    padding: 0;
     bottom: 0;
     height: 100%;
   }
@@ -225,6 +230,10 @@ textarea {
     width: 100%;
     margin-bottom: 10px;
   }
+  .contacto-p > h1 {
+    text-align: center;
+    font-weight: 700;
+  }
   .contacto-p > p {
     text-align: justify;
   }
@@ -245,9 +254,9 @@ textarea {
   }
 }
 
-@media only screen and (min-width: 576px) and (max-width: 767px) {
+@media only screen and (min-width: 575px) and (max-width: 767px) {
   #slider-banner {
-    margin: 20px 0 150px 0;
+    margin: 80px 0 20px 0;
   }
 
   p {
@@ -334,9 +343,9 @@ textarea {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 767px) and (max-width: 991px) {
   #slider-banner {
-    margin: 20px 0 150px 0;
+    margin: 80px 0 20px 0;
   }
 
   h1 {
@@ -408,7 +417,7 @@ textarea {
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   #slider-banner {
-    margin: 50px 0 0 0;
+    margin: 50px 0 20px 0;
     width: 120%;
   }
 
@@ -447,7 +456,7 @@ textarea {
 
 @media only screen and (min-width: 1200px) {
   #slider-banner {
-    margin: 80px 0 0 0;
+    margin: 80px 0 50px 0;
     width: 120%;
   }
 

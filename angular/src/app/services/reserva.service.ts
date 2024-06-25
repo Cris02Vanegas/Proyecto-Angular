@@ -50,4 +50,16 @@ export class ReservaService {
     formData.append('fechaTDR', fechaTDR);
     return this.httpClient.post(this.API_URL, formData);
   }
+
+  getReservas() {
+    return this.httpClient.get(this.API_URL);
+  }
+
+  getReservasInfo(id: string) {
+    return this.httpClient.get(`${this.API_URL}/${id}`);
+  }
+
+  deleteReserva(id: string) {
+    return this.httpClient.delete(`${this.API_URL}/${id}`);
+  }
 }

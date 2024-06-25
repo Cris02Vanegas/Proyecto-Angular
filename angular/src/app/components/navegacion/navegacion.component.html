@@ -23,11 +23,8 @@
           <a class="nav-link me-3 text-warning" routerLink="/productos"
             >Productos</a
           >
-          <a class="nav-link me-3 text-warning" routerLink="/contacto"
-            >Contacto</a
-          >
-          <a class="nav-link me-3 text-warning" routerLink="/privado"
-            >MotoTravels</a
+          <a class="nav-link me-3 text-warning" routerLink="/experiencias"
+            >Experiencias</a
           >
         </div>
       </div>
@@ -43,6 +40,17 @@
       <button class="btn btn-warning text-white">
         <a class="nav-link" routerLink="/registrarse">SignUp</a>
       </button>
+      }
+    </div>
+    <div class="me-2">
+      @if (loginService.isLogin()) {
+      <a class="nav-link text-warning" routerLink="/privado"
+        ><img src="../../../assets/icons8-moto-32.png" alt="" /> Mi perfil</a
+      >
+      }@else {
+      <a hidden class="nav-link text-warning" routerLink="/privado"
+        ><img src="../../../assets/icons8-moto-32.png" alt="" /> Mi perfil</a
+      >
       }
     </div>
     <div class="me-2">

@@ -1,1 +1,91 @@
-<p>reserva works!</p>
+<a class="nav-link active me-3 text-warning" routerLink="/privado"> ← Volver</a>
+@if(reservas.length > 0){
+<h1 class="text-warning text-center">Reservas Activas</h1>
+<p>Mis Reservas</p>
+<div class="container">
+  @for (reserva of reservas; track $index) {
+  <table class="table table-striped-columns table-success">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Documento</th>
+        <th scope="col">Plan de viaje</th>
+        <th scope="col">Fecha viaje</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ reserva.nombre }}</td>
+        <td>{{ reserva.documento }}</td>
+        <td>{{ reserva.planViaje }}</td>
+        <td>{{ reserva.fechaViaje }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="handleDelete(reserva._id)"
+          >
+            Eliminar
+          </button>
+          <button
+            type="button"
+            class="btn btn-warning text-white"
+            (click)="handleUpdate()"
+          >
+            Modificar
+          </button>
+          <button
+            href=""
+            class="btn btn-info text-white"
+            (click)="handleInfo(reserva._id)"
+          >
+            Datos
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <div class="card" style="width: 18rem">
+    <img
+      src="http://localhost:3000/imagenes/{{ reserva.imagen }}"
+      class="card-img-top"
+      alt="tarjeta de: {{ reserva.nombre }}"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ reserva.nombre }}</h5>
+    </div>
+    <div
+      class="btn-group mb-2"
+      role="group"
+      aria-label="Basic mixed styles example"
+    >
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="handleDelete(reserva._id)"
+      >
+        Eliminar Reserva
+      </button>
+      <button
+        type="button"
+        class="btn btn-warning text-white"
+        (click)="handleUpdate()"
+      >
+        Modificar Datos
+      </button>
+      <button
+        href=""
+        class="btn btn-info text-white"
+        (click)="handleInfo(reserva._id)"
+      >
+        Ver Datos
+      </button>
+    </div>
+  </div> -->
+  }
+</div>
+}@else{
+<h1 class="text-warning text-center">Sin Reservas</h1>
+<p>No tiene Reservas</p>
+}
