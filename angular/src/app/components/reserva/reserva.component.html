@@ -1,4 +1,5 @@
 <a class="nav-link active me-3 text-warning" routerLink="/privado"> ← Volver</a>
+<p>{{ correo }}</p>
 @if(reservas.length > 0){
 <h1 class="text-warning text-center">Reservas Activas</h1>
 <p>Mis Reservas</p>
@@ -19,7 +20,7 @@
         <td>{{ reserva.nombre }}</td>
         <td>{{ reserva.documento }}</td>
         <td>{{ reserva.planViaje }}</td>
-        <td>{{ reserva.fechaViaje }}</td>
+        <td>{{ reserva.fechaViaje | date : "shortDate" }}</td>
         <td>
           <button
             type="button"

@@ -30,6 +30,7 @@ export class PrivadoComponent {
   }
 
   name: string = '';
+  correo: string = '';
 
   nombre: string = '';
   tipoDocumento: string = '';
@@ -100,7 +101,6 @@ export class PrivadoComponent {
           this.reservaService.getReservas().subscribe((response: any) => {
             if (response.resultado === 'Bien') {
               this.reservas = response.datos;
-              console.log(this.reservas);
             } else {
               this.toastService.error('An error ocurred');
             }

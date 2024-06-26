@@ -4,16 +4,26 @@
   <li class="list-group-item">Nombre: {{ dato.nombre }}</li>
   <li class="list-group-item">Tipo Docuemnto: {{ dato.tipoDocumento }}</li>
   <li class="list-group-item">Documento: {{ dato.documento }}</li>
-  <li class="list-group-item">FechaNacimiento: {{ dato.fechaNacimiento }}</li>
+  <li class="list-group-item">
+    FechaNacimiento: {{ dato.fechaNacimiento | date : "shortDate" }}
+  </li>
   <li class="list-group-item">PlanViaje: {{ dato.planViaje }}</li>
-  <li class="list-group-item">FechaViaje: {{ dato.fechaViaje }}</li>
+  <li class="list-group-item">
+    FechaViaje: {{ dato.fechaViaje | date : "shortDate" }}
+  </li>
   <li class="list-group-item">NumeroEmergencia: {{ dato.numeroEmergencia }}</li>
   <li class="list-group-item">Marca: {{ dato.marca }}</li>
   <li class="list-group-item">Modelo: {{ dato.modelo }}</li>
   <li class="list-group-item">Año: {{ dato.anio }}</li>
   <li class="list-group-item">cilindraje: {{ dato.cilindraje }}</li>
-  <li class="list-group-item">fechaRTM: {{ dato.fechaRTM }}</li>
-  <li class="list-group-item">FechaSoat: {{ dato.fechaSoat }}</li>
-  <li class="list-group-item">FechaTDR: {{ dato.fechaTDR }}</li>
+  <li class="list-group-item">
+    fechaRTM: {{ dato.fechaRTM | date : "shortDate" }}
+  </li>
+  <li class="list-group-item">
+    FechaSoat: {{ dato.fechaSoat | date : "shortDate" }}
+  </li>
+  <li class="list-group-item">
+    FechaTDR: {{ dato.fechaTDR | date : "shortDate" }}
+  </li>
 </ol>
 }
