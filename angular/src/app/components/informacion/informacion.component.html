@@ -1,21 +1,19 @@
 <a class="nav-link active me-3 text-warning" routerLink="/reserva"> ← Volver</a>
-@for (datos of reservas; track $index) {
+@for (dato of reserva; track $index) {
 <ol class="list-group list-group-numbered">
-  <li class="list-group-item">Nombre: {{ datos.nombre }}</li>
-  <li class="list-group-item">Tipo Docuemnto: {{ datos.tipoDocumento }}</li>
-  <li class="list-group-item">Documento: {{ datos.documento }}</li>
-  <li class="list-group-item">FechaNacimiento: {{ datos.fechaNacimiento }}</li>
-  <li class="list-group-item">PlanViaje: {{ datos.planViaje }}</li>
-  <li class="list-group-item">FechaViaje: {{ datos.fechaViaje }}</li>
-  <li class="list-group-item">
-    NumeroEmergencia: {{ datos.numeroEmergencia }}
-  </li>
-  <li class="list-group-item">Marca: {{ datos.marca }}</li>
-  <li class="list-group-item">Modelo: {{ datos.modelo }}</li>
-  <li class="list-group-item">Año: {{ datos.anio }}</li>
-  <li class="list-group-item">cilindraje: {{ datos.cilindraje }}</li>
-  <li class="list-group-item">fechaRTM: {{ datos.fechaRTM }}</li>
-  <li class="list-group-item">FechaSoat: {{ datos.fechaSoat }}</li>
-  <li class="list-group-item">FechaTDR: {{ datos.fechaTDR }}</li>
+  <li class="list-group-item">Nombre: {{ dato.nombre }}</li>
+  <li class="list-group-item">Tipo Docuemnto: {{ dato.tipoDocumento }}</li>
+  <li class="list-group-item">Documento: {{ dato.documento }}</li>
+  <li class="list-group-item">FechaNacimiento: {{ dato.fechaNacimiento }}</li>
+  <li class="list-group-item">PlanViaje: {{ dato.planViaje }}</li>
+  <li class="list-group-item">FechaViaje: {{ dato.fechaViaje }}</li>
+  <li class="list-group-item">NumeroEmergencia: {{ dato.numeroEmergencia }}</li>
+  <li class="list-group-item">Marca: {{ dato.marca }}</li>
+  <li class="list-group-item">Modelo: {{ dato.modelo }}</li>
+  <li class="list-group-item">Año: {{ dato.anio }}</li>
+  <li class="list-group-item">cilindraje: {{ dato.cilindraje }}</li>
+  <li class="list-group-item">fechaRTM: {{ dato.fechaRTM }}</li>
+  <li class="list-group-item">FechaSoat: {{ dato.fechaSoat }}</li>
+  <li class="list-group-item">FechaTDR: {{ dato.fechaTDR }}</li>
 </ol>
 }

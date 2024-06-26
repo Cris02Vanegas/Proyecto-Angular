@@ -51,7 +51,6 @@ export class PrivadoComponent {
   reservas: any[] = [];
 
   inputFile(event: any) {
-    console.log(this.inputFile);
     if (event.target.files && event.target.files[0]) {
       this.imagen = event.target.files[0];
     }
@@ -101,6 +100,7 @@ export class PrivadoComponent {
           this.reservaService.getReservas().subscribe((response: any) => {
             if (response.resultado === 'Bien') {
               this.reservas = response.datos;
+              console.log(this.reservas);
             } else {
               this.toastService.error('An error ocurred');
             }

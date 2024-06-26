@@ -46,10 +46,8 @@ export class ReservaComponent {
     this.reservaService.getReservasInfo(id).subscribe((response: any) => {
       if (response.resultado === 'Bien') {
         this.reservas = response.datos;
-        localStorage.setItem('temporal', 'abc');
+        localStorage.setItem('temporal', JSON.stringify(this.reservas));
         this.router.navigateByUrl('/informacion');
-
-        console.log(this.reservas);
       } else {
         this.toastService.error('An error ocurred');
       }
@@ -63,6 +61,8 @@ export class ReservaComponent {
         if (response.resultado === 'bien') {
           this.reservaService.getReservas().subscribe((response: any) => {
             if (response.resultado === 'Bien') {
+              const date = new Date(response.datos.fechaViaje);
+              date.toLocaleString();
               this.reservas = response.datos;
             } else {
               this.toastService.error('An error ocurred');
