@@ -47,9 +47,10 @@ export class InicioComponent {
         };
         this.contactService.login(credenciales).subscribe((respuesta: any) => {
           if (respuesta.resultado == 'Bien') {
-            this.router.navigateByUrl('/contacto');
+            this.toastService.success('Mensaje Enviado');
           }
         });
+        this.formularioContacto.reset();
       }
     } else {
       this.toastService.warning('Todos los campos son obligatorios');

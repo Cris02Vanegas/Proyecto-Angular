@@ -256,7 +256,7 @@ textarea {
 
 @media only screen and (min-width: 575px) and (max-width: 767px) {
   #slider-banner {
-    margin: 80px 0 20px 0;
+    margin: 50px 0 50px 0;
   }
 
   p {
@@ -345,7 +345,7 @@ textarea {
 
 @media only screen and (min-width: 767px) and (max-width: 991px) {
   #slider-banner {
-    margin: 80px 0 20px 0;
+    margin: 80px 0 80px 0;
   }
 
   h1 {
@@ -417,7 +417,7 @@ textarea {
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   #slider-banner {
-    margin: 50px 0 20px 0;
+    margin: 50px 0 100px 0;
     width: 120%;
   }
 
@@ -454,9 +454,9 @@ textarea {
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1199px) and (max-width: 1536px) {
   #slider-banner {
-    margin: 80px 0 50px 0;
+    margin: 80px 0 70px 0;
     width: 120%;
   }
 
@@ -485,5 +485,12 @@ textarea {
     padding: 40px 0 0 0;
     bottom: 0;
     height: 100%;
+  }
+}
+
+@media only screen and (min-width: 1199px) {
+  #slider-banner {
+    margin: 80px 0 100px 0;
+    width: 120%;
   }
 }

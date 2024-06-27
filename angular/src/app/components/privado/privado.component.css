@@ -104,9 +104,22 @@ label {
   }
 }
 
-@media only screen and (min-width: 1201px) {
+@media only screen and (min-width: 1200px) and (max-width: 1536px) {
   .container {
     margin-left: 100px;
+  }
+
+  .banner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .container {
+    margin-left: 290px;
   }
 
   .banner {

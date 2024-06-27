@@ -1,40 +1,55 @@
 <a class="nav-link active me-3 text-warning" routerLink="/privado"> ← Volver</a>
-<p>{{ correo }}</p>
+
 @if(reservas.length > 0){
 <h1 class="text-warning text-center">Reservas Activas</h1>
-<p>Mis Reservas</p>
 <div class="container">
   @for (reserva of reservas; track $index) {
-  <table class="table table-striped-columns table-success">
+  <table style="width: 80%" class="table table-bordered border-secondary">
     <thead>
       <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Documento</th>
-        <th scope="col">Plan de viaje</th>
-        <th scope="col">Fecha viaje</th>
-        <th scope="col">Acciones</th>
+        <th class="text-center bg-warning" style="width: 160px" scope="col">
+          Nombre
+        </th>
+        <th class="text-center bg-warning" style="width: 100px" scope="col">
+          Documento
+        </th>
+        <th class="text-center bg-warning" style="width: 400px" scope="col">
+          Plan de viaje
+        </th>
+        <th class="text-center bg-warning" style="width: 150px" scope="col">
+          Fecha viaje
+        </th>
+        <th class="text-center bg-warning" style="width: 350px" scope="col">
+          Acciones
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>{{ reserva.nombre }}</td>
-        <td>{{ reserva.documento }}</td>
-        <td>{{ reserva.planViaje }}</td>
-        <td>{{ reserva.fechaViaje | date : "shortDate" }}</td>
-        <td>
+        <td class="text-center" style="width: 160px">{{ reserva.nombre }}</td>
+        <td class="text-center" style="width: 100px">
+          {{ reserva.documento }}
+        </td>
+        <td class="text-center" style="width: 400px">
+          {{ reserva.planViaje }}
+        </td>
+        <td class="text-center" style="width: 100px">
+          {{ reserva.fechaViaje | date : "mediumDate" }}
+        </td>
+        <td style="width: 350px">
           <button
             type="button"
-            class="btn btn-danger"
+            class="btn btn-danger me-1"
             (click)="handleDelete(reserva._id)"
           >
             Eliminar
           </button>
           <button
             type="button"
-            class="btn btn-warning text-white"
+            class="btn btn-warning text-white text-center me-1"
             (click)="handleUpdate()"
           >
-            Modificar
+            Editar
           </button>
           <button
             href=""

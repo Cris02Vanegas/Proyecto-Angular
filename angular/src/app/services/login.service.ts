@@ -35,6 +35,6 @@ export class LoginService {
   logOut() {
     this.toastService.info('Sesión Cerrada');
     localStorage.removeItem('token');
-    this.router.navigate(['/inicio']);
+    this.router.navigate(['/iniciar-sesion']);
   }
 }

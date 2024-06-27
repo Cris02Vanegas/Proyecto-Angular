@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Interfaces } from '../../interfaces/interfaces';
 import { LoginService } from '../../services/login.service';
 import { CommonModule } from '@angular/common';
+import { flatMap } from 'rxjs';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -28,22 +29,31 @@ export class IniciarSesionComponent {
     password: new FormControl('', Validators.required),
   });
 
+  isLoading: boolean = false;
+
   manejarEnvio() {
     if (this.formulariocredenciales.valid) {
       const usuario = this.formulariocredenciales.value.usuario;
       const password = this.formulariocredenciales.value.password;
 
       if (typeof usuario === 'string' && typeof password === 'string') {
+        this.isLoading = true;
         const credenciales: Interfaces = {
           usuario,
           password,
         };
         this.loginService.login(credenciales).subscribe((respuesta: any) => {
           if (respuesta.resultado == 'bien') {
-            localStorage.setItem('token', respuesta.datos.token);
-            this.router.navigateByUrl('/privado');
+            setTimeout(() => {
+              this.isLoading = false;
+              localStorage.setItem('token', respuesta.datos.token);
+              this.router.navigateByUrl('/privado');
+            }, 1000);
           } else {
-            this.toastService.warning('Credenciales erroneos');
+            setTimeout(() => {
+              this.isLoading = false;
+              this.toastService.warning('Credenciales erroneos');
+            }, 1000);
           }
         });
       }

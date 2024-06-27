@@ -1,4 +1,14 @@
 <div class="banner-principal">
+  @if (isLoading) {
+  <div
+    style="height: 400px"
+    class="d-flex justify-content-center align-items-center"
+  >
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  }@else {
   <form
     [formGroup]="formulariocredenciales"
     (ngSubmit)="manejarEnvio()"
@@ -48,4 +58,5 @@
       </div>
     </div>
   </form>
+  }
 </div>

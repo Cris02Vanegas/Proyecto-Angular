@@ -97,7 +97,6 @@ export class PrivadoComponent {
       this.loginService.validarToken(token).subscribe((response: any) => {
         if (response.resultado === 'bien') {
           this.name = response.datos.decodificado.name;
-          this.toastService.success(`hello, ${this.name}`);
           this.reservaService.getReservas().subscribe((response: any) => {
             if (response.resultado === 'Bien') {
               this.reservas = response.datos;

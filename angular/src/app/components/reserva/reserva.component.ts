@@ -25,20 +25,7 @@ export class ReservaComponent {
   datos: any[] = [];
   correo: string = '';
 
-  /*  handleSubmitSearch() {
-    const filtered = this.reservas.filter((email) => {
-      return this.reserva.email === 
-    });
-    if (filtered.length > 0) {
-      this.caps = filtered;
-      this.toastrService.info('Caps found: ' + filtered.length);
-    } else {
-      this.caps = this.allCaps;
-      this.toastrService.info(
-        'Caps ' + this.searchForm.value.term + ' not found'
-      );
-    }
-  } */
+  isLoading: boolean = false;
 
   handleDelete(id: string) {
     this.reservaService.deleteReserva(id).subscribe((response: any) => {
@@ -82,14 +69,15 @@ export class ReservaComponent {
           this.reservaService.getReservas().subscribe((response: any) => {
             if (response.resultado === 'Bien') {
               this.reservas = response.datos;
-              console.log(this.correo);
-              console.log(this.reservas);
               const filtered = this.reservas.filter((reserva) => {
                 return reserva.email === this.correo;
               });
-              console.log(filtered);
               if (filtered.length > 0) {
                 this.reservas = filtered;
+              } else {
+                if (filtered.length === 0) {
+                  this.reservas = [];
+                }
               }
             } else {
               this.toastService.error('An error ocurred');

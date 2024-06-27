@@ -4,11 +4,6 @@
   justify-content: center;
   margin-bottom: 20px;
 }
-/* 
-img {
-  width: auto;
-  height: 200px;
-} */
 
 button {
   width: 80px;
@@ -29,5 +24,14 @@ button {
   }
   h1 {
     margin-left: 170px;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .container {
+    margin-left: 290px;
+  }
+  h1 {
+    margin-left: 300px;
   }
 }
