@@ -1,29 +1,120 @@
-<a class="nav-link active me-3 text-warning" routerLink="/reserva"> ← Volver</a>
-@for (dato of reserva; track $index) {
-<ol class="list-group list-group-numbered">
-  <li class="list-group-item">Nombre: {{ dato.nombre }}</li>
-  <li class="list-group-item">Tipo Docuemnto: {{ dato.tipoDocumento }}</li>
-  <li class="list-group-item">Documento: {{ dato.documento }}</li>
-  <li class="list-group-item">
-    FechaNacimiento: {{ dato.fechaNacimiento | date : "shortDate" }}
-  </li>
-  <li class="list-group-item">PlanViaje: {{ dato.planViaje }}</li>
-  <li class="list-group-item">
-    FechaViaje: {{ dato.fechaViaje | date : "shortDate" }}
-  </li>
-  <li class="list-group-item">NumeroEmergencia: {{ dato.numeroEmergencia }}</li>
-  <li class="list-group-item">Marca: {{ dato.marca }}</li>
-  <li class="list-group-item">Modelo: {{ dato.modelo }}</li>
-  <li class="list-group-item">Año: {{ dato.anio }}</li>
-  <li class="list-group-item">cilindraje: {{ dato.cilindraje }}</li>
-  <li class="list-group-item">
-    fechaRTM: {{ dato.fechaRTM | date : "shortDate" }}
-  </li>
-  <li class="list-group-item">
-    FechaSoat: {{ dato.fechaSoat | date : "shortDate" }}
-  </li>
-  <li class="list-group-item">
-    FechaTDR: {{ dato.fechaTDR | date : "shortDate" }}
-  </li>
-</ol>
-}
+<!-- <a class="nav-link active me-3 text-warning" routerLink="/reserva"> ← Volver</a>
+<div class="container">
+  @for (dato of reserva; track $index) {
+  <ol class="list-group list-group-numbered list-group-item-dark">
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Nombre</div>
+        {{ dato.nombre }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Tipo Documento</div>
+        {{ dato.tipoDocumento }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Documento</div>
+        {{ dato.documento }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">FechaNacimiento</div>
+        {{ dato.fechaNacimiento | date : "shortDate" }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">PlanViaje</div>
+        {{ dato.planViaje }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">FechaViaje</div>
+        {{ dato.fechaViaje | date : "shortDate" }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">NumeroEmergencia</div>
+        {{ dato.numeroEmergencia }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Marca Moto</div>
+        {{ dato.marca }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Modelo</div>
+        {{ dato.modelo }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Año</div>
+        {{ dato.anio }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Cilindraje</div>
+        {{ dato.cilindraje }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">FechaRTM</div>
+        {{ dato.fechaRTM | date : "shortDate" }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">FechaSoat</div>
+        {{ dato.fechaSoat | date : "shortDate" }}
+      </div>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-start"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">FechaTDR</div>
+        {{ dato.fechaTDR | date : "shortDate" }}
+      </div>
+    </li>
+  </ol>
+  }
+</div>
+ -->

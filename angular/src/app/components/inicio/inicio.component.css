@@ -456,7 +456,7 @@ textarea {
 
 @media only screen and (min-width: 1199px) and (max-width: 1536px) {
   #slider-banner {
-    margin: 80px 0 70px 0;
+    margin: 60px 0 50px 0;
     width: 120%;
   }
 
@@ -488,7 +488,7 @@ textarea {
   }
 }
 
-@media only screen and (min-width: 1199px) {
+@media only screen and (min-width: 1537px) {
   #slider-banner {
     margin: 80px 0 100px 0;
     width: 120%;

@@ -1,6 +1,8 @@
 .banner-nav {
   display: flex;
   justify-content: space-between;
+  backdrop-filter: invert(90%);
+  height: 80px;
 }
 
 .banner-login {
@@ -11,6 +13,10 @@
 a {
   padding: 10px;
   border-radius: 10px;
+}
+
+.navbar-nav > a:hover {
+  background-color: lightgoldenrodyellow;
 }
 
 .logo {

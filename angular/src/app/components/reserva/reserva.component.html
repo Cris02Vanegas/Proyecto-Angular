@@ -47,14 +47,18 @@
           <button
             type="button"
             class="btn btn-warning text-white text-center me-1"
-            (click)="handleUpdate()"
+            data-bs-toggle="modal"
+            data-bs-target="#updateModal"
+            (click)="handleUpdate(reserva)"
           >
             Editar
           </button>
           <button
-            href=""
+            type="button"
             class="btn btn-info text-white"
-            (click)="handleInfo(reserva._id)"
+            data-bs-toggle="modal"
+            data-bs-target="#infoModal"
+            (click)="handleInfo(reserva)"
           >
             Datos
           </button>
@@ -66,5 +70,286 @@
 </div>
 }@else{
 <h1 class="text-warning text-center">Sin Reservas</h1>
-<p>No tiene Reservas</p>
 }
+
+<!--Modal De informacion-->
+
+<div
+  class="modal fade"
+  id="infoModal"
+  tabindex="-1"
+  aria-labelledby="infoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <h2 class="modal-title" id="infoModalLabel">Datos</h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        @if (reservaSelect) {
+        <ol class="list-group list-group-numbered list-group-item-dark">
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Nombre</div>
+              {{ reservaSelect.nombre }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Tipo Documento</div>
+              {{ reservaSelect.tipoDocumento }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Documento</div>
+              {{ reservaSelect.documento }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">FechaNacimiento</div>
+              {{ reservaSelect.fechaNacimiento | date : "shortDate" }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">PlanViaje</div>
+              {{ reservaSelect.planViaje }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">FechaViaje</div>
+              {{ reservaSelect.fechaViaje | date : "shortDate" }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">NumeroEmergencia</div>
+              {{ reservaSelect.numeroEmergencia }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Marca Moto</div>
+              {{ reservaSelect.marca }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Modelo</div>
+              {{ reservaSelect.modelo }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Año</div>
+              {{ reservaSelect.anio }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Cilindraje</div>
+              {{ reservaSelect.cilindraje }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">FechaRTM</div>
+              {{ reservaSelect.fechaRTM | date : "shortDate" }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">FechaSoat</div>
+              {{ reservaSelect.fechaSoat | date : "shortDate" }}
+            </div>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-start"
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">FechaTDR</div>
+              {{ reservaSelect.fechaTDR | date : "shortDate" }}
+            </div>
+          </li>
+        </ol>
+        }
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal De update-->
+
+<div
+  class="modal fade"
+  id="updateModal"
+  tabindex="-1"
+  aria-labelledby="updateModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <h2 class="modal-title" id="iupdateModalLabel">Editar Informacion</h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        @if (reservaUpdate) {
+        <form
+          [formGroup]="formularioUpdate"
+          (ngSubmit)="enviarUpdate()"
+          class="row g-3 d-flex"
+        >
+          <div class="col-lg-6">
+            <label for="inputNombre4">Nombre</label>
+            <input
+              type="text"
+              class="form-control border border-secondary"
+              id="inputNombre4"
+              formControlName="nombre"
+            />
+          </div>
+          <div class="col-lg-6">
+            <label for="inputDocumento">Documento</label>
+            <input
+              type="text"
+              class="form-control border border-secondary"
+              id="inputDocumento"
+              formControlName="documento"
+            />
+          </div>
+          <div class="col-lg-6">
+            <label for="inputPassword4" class="form-label m-0"
+              >Plan de viaje</label
+            >
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              name="planViaje"
+              formControlName="planViaje"
+            >
+              <option selected>Seleccione...</option>
+              <option value="Tour punta gallinas - Guajira">
+                Tour punta gallinas - Guajira
+              </option>
+              <option value="Tour Cascadas fin del mundo - Putumayo">
+                Tour Cascadas fin del mundo - Putumayo
+              </option>
+              <option value="Tour desierto la tatacoa - Huila">
+                Tour desierto la tatacoa - Huila
+              </option>
+              <option value="Tour Los nevados - Manizales">
+                Tour Los nevados - Manizales
+              </option>
+            </select>
+          </div>
+          <div class="col-lg-6">
+            <label for="inputNumeroEmergencia4">Numero Emergencia</label>
+            <input
+              type="text"
+              class="form-control border border-secondary"
+              id="inputNumeroEmergencia4"
+              formControlName="numeroEmergencia"
+            />
+          </div>
+          <div class="col-lg-6">
+            <label for="inputMarca4">Marca</label>
+            <input
+              type="text"
+              class="form-control border border-secondary"
+              id="inputMarca4"
+              formControlName="marca"
+            />
+          </div>
+          <div class="col-lg-6">
+            <label for="inputModelo4">Modelo</label>
+            <input
+              type="text"
+              class="form-control border border-secondary"
+              id="inputModelo4"
+              formControlName="modelo"
+            />
+          </div>
+          <div class="col-lg-6">
+            <label for="inputAnio4">Año</label>
+            <input
+              type="text"
+              class="form-control border border-secondary"
+              id="inputAnio4"
+              formControlName="anio"
+            />
+          </div>
+          <div class="col-lg-6">
+            <label for="inputCilindraje4">Cilindraje</label>
+            <input
+              type="text"
+              class="form-control border border-secondary"
+              id="inputCilindraje4"
+              formControlName="cilindraje"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-warning text-white fw-semibold"
+            >
+              Enviar
+            </button>
+          </div>
+        </form>
+        }
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -15,3 +15,21 @@ export interface Registro {
   contrasenia: String;
   telefono: String;
 }
+
+export interface Update {
+  nombre: String;
+  /*  tipoDocumento: any; */
+  documento: any;
+  /* fechaNacimiento: any;*/
+  planViaje: any;
+  /* fechaViaje: any;*/
+  /* email: any; */
+  numeroEmergencia: any;
+  marca: any;
+  modelo: any;
+  anio: any;
+  cilindraje: any;
+  /*  fechaRTM: any;
+  fechaSoat: any;
+  fechaTDR: any; */
+}

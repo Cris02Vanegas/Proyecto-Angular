@@ -54,10 +54,10 @@ export class RegistrarseComponent {
           .subscribe((respuesta: any) => {
             if (respuesta.resultado == 'Bien') {
               this.toastService.success('Registro Exitoso');
-              this.router.navigateByUrl('/privado');
             }
           });
       }
+      this.formularioRegistro.reset();
     } else {
       this.toastService.warning('Todos los campos son obligatorios');
     }

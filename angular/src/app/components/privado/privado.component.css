@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+a {
+  display: inline;
+}
+
 .boton-reserva {
   margin-bottom: 20px;
   font-size: 25px;

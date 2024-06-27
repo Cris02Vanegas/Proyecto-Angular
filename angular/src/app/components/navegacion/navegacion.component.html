@@ -17,13 +17,19 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active me-3 text-warning" routerLink="/inicio"
+          <a
+            class="nav-link active me-3 text-success fw-semibold"
+            routerLink="/inicio"
             >Inicio</a
           >
-          <a class="nav-link me-3 text-warning" routerLink="/productos"
+          <a
+            class="nav-link me-3 text-success fw-semibold"
+            routerLink="/productos"
             >Productos</a
           >
-          <a class="nav-link me-3 text-warning" routerLink="/experiencias"
+          <a
+            class="nav-link me-3 text-success fw-semibold"
+            routerLink="/experiencias"
             >Experiencias</a
           >
         </div>
@@ -33,22 +39,22 @@
   <div class="banner-login">
     <div class="me-2">
       @if (loginService.isLogin()) {
-      <button hidden class="btn btn-warning text-white">
+      <button hidden class="btn btn-warning text-success fw-semibold">
         <a class="nav-link" routerLink="/registrarse">SignUp</a>
       </button>
       }@else {
-      <button class="btn btn-warning text-white">
+      <button class="btn btn-warning text-success fw-semibold">
         <a class="nav-link" routerLink="/registrarse">SignUp</a>
       </button>
       }
     </div>
     <div class="me-2">
       @if (loginService.isLogin()) {
-      <a class="nav-link text-warning" routerLink="/privado"
+      <a class="nav-link text-success fw-semibold" routerLink="/privado"
         ><img src="../../../assets/icons8-moto-32.png" alt="" /> Mi perfil</a
       >
       }@else {
-      <a hidden class="nav-link text-warning" routerLink="/privado"
+      <a hidden class="nav-link text-success fw-semibold" routerLink="/privado"
         ><img src="../../../assets/icons8-moto-32.png" alt="" /> Mi perfil</a
       >
       }
@@ -57,13 +63,13 @@
       @if (loginService.isLogin()) {
       <button
         type="button"
-        class="btn btn-warning text-white p-1"
+        class="btn btn-warning text-success fw-semibold p-1"
         (click)="loginService.logOut()"
       >
         LogOut
       </button>
       }@else {
-      <button class="btn btn-warning text-white">
+      <button class="btn btn-warning text-success fw-semibold">
         <a class="nav-link" routerLink="/iniciar-sesion">Login</a>
       </button>
       }

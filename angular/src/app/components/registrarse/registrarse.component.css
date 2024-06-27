@@ -34,7 +34,7 @@ label {
 
 @media only screen and (min-width: 1201px) and (max-width: 1536px) {
   .container {
-    margin: 0 0 20px 120px;
+    margin: 20px 0 0 120px;
     width: 100%;
     display: flex;
     justify-content: center;

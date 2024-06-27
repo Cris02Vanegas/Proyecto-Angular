@@ -1,4 +1,4 @@
-<p>Hola, {{ name }}</p>
+<p class="fs-2">Bienvenido {{ name }}</p>
 <a class="nav-link active me-3 text-warning" routerLink="/reserva"
   >Mis Reservas →</a
 >
@@ -284,14 +284,16 @@
   <!--Formulario-->
 
   <div class="banner-formulario" #elemento>
-    <h1 class="text-white mb-4 text-center">Datos del viajero</h1>
+    <h1 class="text-warning mb-4 text-center">Datos del viajero</h1>
     <form
       (ngSubmit)="enviarReserva(heroForm)"
       #heroForm="ngForm"
       class="row g-3"
     >
       <div class="col-md-12 col-xl-6">
-        <label for="inputPassword4" class="form-label">Nombre</label>
+        <label for="inputPassword4" class="form-label text-warning"
+          >Nombre</label
+        >
         <input
           type="text"
           class="form-control"
@@ -301,7 +303,9 @@
         />
       </div>
       <div class="col-xl-6">
-        <label for="inputPassword4" class="form-label">Tipo de documento</label>
+        <label for="inputPassword4" class="form-label text-warning"
+          >Tipo de documento</label
+        >
         <select
           class="form-select"
           aria-label="Default select example"
@@ -317,7 +321,9 @@
         </select>
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">No Documento</label>
+        <label for="inputPassword4" class="form-label text-warning"
+          >No Documento</label
+        >
         <input
           type="number"
           class="form-control"
@@ -327,7 +333,9 @@
         />
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Fecha nacimiento</label>
+        <label for="inputPassword4" class="form-label text-warning"
+          >Fecha nacimiento</label
+        >
         <input
           type="date"
           class="form-control"
@@ -337,7 +345,9 @@
         />
       </div>
       <div class="col-xl-6">
-        <label for="inputPassword4" class="form-label">Plan de viaje</label>
+        <label for="inputPassword4" class="form-label text-warning"
+          >Plan de viaje</label
+        >
         <select
           class="form-select"
           aria-label="Default select example"
@@ -360,7 +370,9 @@
         </select>
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Fecha de viaje</label>
+        <label for="inputPassword4" class="form-label text-warning"
+          >Fecha de viaje</label
+        >
         <input
           type="date"
           class="form-control"
@@ -370,7 +382,7 @@
         />
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Email</label>
+        <label for="inputEmail4" class="form-label text-warning">Email</label>
         <input
           type="email"
           class="form-control"
@@ -381,7 +393,7 @@
         />
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label"
+        <label for="inputPassword4" class="form-label text-warning"
           >Número contacto emergencia</label
         >
         <input
@@ -397,7 +409,7 @@
 
       <h1 class="text-white text-center">Datos de la Motocicleta</h1>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Marca</label>
+        <label for="inputEmail4" class="form-label text-warning">Marca</label>
         <input
           type="text"
           class="form-control"
@@ -407,7 +419,7 @@
         />
       </div>
       <div class="col-md-6">
-        <label for="inputCity" class="form-label">Modelo</label>
+        <label for="inputCity" class="form-label text-warning">Modelo</label>
         <input
           type="text"
           class="form-control"
@@ -417,7 +429,7 @@
         />
       </div>
       <div class="col-md-6">
-        <label for="inputCity" class="form-label">Año</label>
+        <label for="inputCity" class="form-label text-warning">Año</label>
         <input
           type="text"
           class="form-control"
@@ -427,7 +439,9 @@
         />
       </div>
       <div class="col-md-6">
-        <label for="inputCity" class="form-label">Cilindraje</label>
+        <label for="inputCity" class="form-label text-warning"
+          >Cilindraje</label
+        >
         <input
           type="text"
           class="form-control"
@@ -437,7 +451,9 @@
         />
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Fecha RTM</label>
+        <label for="inputPassword4" class="form-label text-warning"
+          >Fecha RTM</label
+        >
         <input
           type="date"
           class="form-control"
@@ -447,7 +463,9 @@
         />
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Fecha Soat</label>
+        <label for="inputPassword4" class="form-label text-warning"
+          >Fecha Soat</label
+        >
         <input
           type="date"
           class="form-control"
@@ -457,7 +475,9 @@
         />
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Fecha TDR</label>
+        <label for="inputPassword4" class="form-label text-warning"
+          >Fecha TDR</label
+        >
         <input
           type="date"
           class="form-control"
@@ -467,7 +487,7 @@
         />
       </div>
       <div class="col-md-6">
-        <label for="inputGroupFile03" class="form-label"
+        <label for="inputGroupFile03" class="form-label text-warning"
           >Tarjeta de propiedad</label
         >
         <input

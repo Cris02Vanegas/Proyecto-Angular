@@ -59,6 +59,10 @@ export class ReservaService {
     return this.httpClient.get(`${this.API_URL}/${id}`);
   }
 
+  putReservasInfo(id: String, datos: any) {
+    return this.httpClient.put(`${this.API_URL}/${id}`, datos);
+  }
+
   deleteReserva(id: string) {
     return this.httpClient.delete(`${this.API_URL}/${id}`);
   }
