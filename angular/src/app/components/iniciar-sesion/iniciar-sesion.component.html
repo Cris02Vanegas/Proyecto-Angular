@@ -16,10 +16,10 @@
   >
     <div class="mb-4">
       <img class="logo" src="../../../assets/login.png" alt="logi-ico" />
-      <div class="fw-bold fs-4 text">Login</div>
+      <div class="fw-bold fs-4">Login</div>
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label fw-semibold"
+      <label for="exampleInputEmail1" class="form-label fw-semibold text-black"
         >Usuario</label
       >
       <input
@@ -31,7 +31,9 @@
       />
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label fw-semibold"
+      <label
+        for="exampleInputPassword1"
+        class="form-label fw-semibold text-black"
         >Password</label
       >
       <input
@@ -41,7 +43,7 @@
         formControlName="password"
       />
     </div>
-    <button type="submit" class="btn btn-warning text-white fw-semibold">
+    <button type="submit" class="btn btn-warning text-success fw-semibold">
       Log In
     </button>
 
@@ -50,7 +52,7 @@
         <span>Don't have an account?</span>
         <button
           type="submit"
-          class="btn btn-success fw-semibold"
+          class="btn btn-success fw-semibold text-warning"
           (click)="signUpEnvio()"
         >
           Sign Up
