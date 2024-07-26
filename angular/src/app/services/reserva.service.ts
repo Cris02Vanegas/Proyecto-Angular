@@ -11,7 +11,7 @@ export class ReservaService {
   httpClient = inject(HttpClient);
   router = inject(Router);
 
-  API_URL = 'http://localhost:3000/privado';
+  API_URL = 'http://3.17.152.32:3000/privado';
 
   createReserva(
     nombre: any,

@@ -12,7 +12,7 @@ export class ContactService {
   httpClient = inject(HttpClient);
   router = inject(Router);
 
-  API_URL = 'http://localhost:3000/contacto';
+  API_URL = 'http://3.17.152.32:3000/contacto';
 
   login(credential: Contactenos) {
     return this.httpClient.post(this.API_URL, credential);
