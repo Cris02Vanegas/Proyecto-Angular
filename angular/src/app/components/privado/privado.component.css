@@ -8,11 +8,6 @@ a {
   display: inline;
 }
 
-.boton-reserva {
-  margin-bottom: 20px;
-  font-size: 25px;
-}
-
 .banner-boton {
   display: flex;
   justify-content: center;
@@ -29,12 +24,31 @@ a {
   margin-bottom: 20px;
   align-items: center;
   color: white;
-  background: transparent;
+  border: 2px solid black;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* background: transparent;
   background-image: linear-gradient(
     -90deg,
     rgba(0, 0, 0, 0.5) 30%,
     rgba(0, 0, 0, 0.7) 100%
-  );
+  ); */
+}
+
+.modal-body {
+  background-color: lightslategray;
+}
+
+.modal-body > p {
+  color: black;
+}
+
+.modal-header > h1 {
+  color: black;
+}
+
+.modal-footer,
+.modal-header {
+  background-color: rgb(99, 165, 206);
 }
 
 .card-body > h5 {
@@ -46,32 +60,15 @@ a {
   text-align: justify;
 }
 
-.divInformacion {
-  margin-bottom: 20px;
-  font-size: large;
-  padding: 2% 2% 2% 2%;
-  height: auto;
-  border: 1px white;
-  background-image: linear-gradient(
-    -90deg,
-    rgba(0, 0, 0, 0.5) 30%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
-}
-
-.divInformacion > p {
-  text-align: justify;
-}
-
 h2 {
-  color: white;
+  color: black;
   text-align: center;
 }
 
 li,
 ol,
 ul {
-  color: white;
+  color: black;
 }
 
 .banner-formulario {
@@ -79,11 +76,16 @@ ul {
   margin: 20px 0 30px 0;
   padding: 20px;
   border-radius: 10px;
+  border: 2px solid black;
 }
 
 label {
   font-weight: 800;
   color: aliceblue;
+}
+
+input {
+  background-color: rgb(218, 218, 218);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

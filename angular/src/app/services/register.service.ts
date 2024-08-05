@@ -13,7 +13,7 @@ export class RegisterService {
   httpClient = inject(HttpClient);
   router = inject(Router);
 
-  API_URL = 'http://3.17.152.32:3000/usuarios';
+  API_URL = 'http://18.217.102.207:3000/usuarios';
 
   login(credential: Registro) {
     return this.httpClient.post(this.API_URL, credential);

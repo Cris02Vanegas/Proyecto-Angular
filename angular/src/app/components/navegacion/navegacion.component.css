@@ -1,7 +1,7 @@
 .banner-nav {
   display: flex;
   justify-content: space-between;
-  backdrop-filter: invert(90%);
+  /* backdrop-filter: invert(90%); */
 }
 
 .banner-login {

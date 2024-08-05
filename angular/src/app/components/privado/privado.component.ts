@@ -49,6 +49,8 @@ export class PrivadoComponent {
   fechaSoat: any;
   fechaTDR: any;
 
+  selected: string = 'Seleccione...';
+
   reservas: any[] = [];
 
   inputFile(event: any) {

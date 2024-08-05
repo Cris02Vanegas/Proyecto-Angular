@@ -1,9 +1,9 @@
 <p class="fs-2">Bienvenido {{ name }}</p>
-<a class="nav-link active me-3 text-warning" routerLink="/reserva"
+<a class="nav-link active me-3 text-white" routerLink="/reserva"
   >Mis Reservas →</a
 >
 <div class="container">
-  <h1 class="text-warning text-decoration-underline">RESERVA TU DESTINO</h1>
+  <h1 class="text-white text-decoration-underline">RESERVA TU DESTINO</h1>
   <div class="banner">
     <div class="card" style="width: 18rem">
       <img
@@ -19,7 +19,96 @@
           alta Guajira.
         </p>
       </div>
+      <!-- Button trigger modal -->
       <button
+        type="button"
+        class="btn btn-warning text-dark mb-2"
+        data-bs-toggle="modal"
+        data-bs-target="#modal-guajira"
+      >
+        Mostrar
+      </button>
+
+      <!-- Modal 1 -->
+      <div
+        class="modal fade"
+        id="modal-guajira"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Tour Guajira
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h2>Descripción</h2>
+              <p class="text-dark">
+                Este tour esta dirigido para riders que cuenten con motocicleta
+                de 650cc en adelante debido a la distancia del recorrido (1218km
+                aprox.) durante el recorrido en la alta Guajira contamos con
+                guías locales y vehículos de apoyo para evitar contratiempos que
+                se puedan presentar por la dificultad del terreno.
+              </p>
+              <h2>Recorrido</h2>
+              <p class="text-dark">
+                Saldremos desde la ciudad de Bogotá, por la via ruta del sol
+                hacía el cesar, en nuestra ruta cruzaremos por Mompox, Cabo de
+                la Vela, Punta Gallinas, Mayapo y Riohacha.
+              </p>
+              <h2>Qué Incluye</h2>
+              <ul>
+                <li>8 días, 7 noches de hospedaje en acomodación doble</li>
+                <li>Desayunos y almuerzos incluídos</li>
+                <li>Guías durante el recorrido</li>
+                <li>
+                  Vehículos de apoyo en caso de emergencia con paramédicos
+                </li>
+                <li>Seguro de viaje</li>
+                <li>Dirigido a motos de 650cc en adelante</li>
+              </ul>
+              <h2>Fechas Disponibles</h2>
+              <ol>
+                <li>16 al 23 de Agosto 2024</li>
+                <li>11 al 18 de Octubre 2024</li>
+                <li>6 al 13 de Diciembre 2024</li>
+              </ol>
+              <h2>Costos</h2>
+              <ul>
+                <li>Costo individual: 3.500.000 COP</li>
+                <li>Costo por pareja: 6.500.000 COP</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning text-white boton-reserva"
+                (click)="scroll(elemento)"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <button
         href=""
         class="btn btn-warning mb-3 text-white button"
         (click)="mostrarOcultarInfo1()"
@@ -73,8 +162,9 @@
         </div>
       </div>
       <p hidden>{{ mensaje }}</p>
-    </div>
-    <!--Informacion 2-->
+    </div> -->
+
+    <!--modal 2-->
     <div class="card" style="width: 18rem">
       <img
         src="../../../assets/privado_img/nevados.jpg"
@@ -90,57 +180,86 @@
         </p>
       </div>
       <button
-        href="#"
-        class="btn btn-warning mb-3 text-white button"
-        (click)="mostrarOcultarInfo2()"
+        type="button"
+        class="btn btn-warning text-dark mb-2"
+        data-bs-toggle="modal"
+        data-bs-target="#modal-nevados"
       >
-        {{ mensaje_enlace2 }}
+        Mostrar
       </button>
-    </div>
-    <div *ngIf="mostrar2">
-      <div class="divInformacion">
-        <h2>Descripción</h2>
-        <p class="dark">
-          Tour dirigido para riders con motocicleta de 250cc en adelante. En
-          este tour tendremos la oportunidad de contar con ruta Off Road 30% y
-          On Road 70% con un nivel de exigencia básico.
-        </p>
-        <h2>Recorrido</h2>
-        <p class="dark">
-          Saldremos desde la ciudad de Bogotá, hasta Murillo en el departamento
-          del Tolima, podremos visitar el imponente Nevado del Ruiz hasta llegar
-          a nuestro destino en Manizalez - Caldas.
-        </p>
-        <h2>Qué Incluye</h2>
-        <ul>
-          <li>2 días, 1 noche de hospedaje en finca ecoturística</li>
-          <li>Desayunos y almuerzos incluídos</li>
-          <li>Guías durante el recorrido</li>
-          <li>Noche de termales en Murillo - Tolima</li>
-          <li>Seguro de viaje</li>
-          <li>Dirigido a motos de 250cc en adelante</li>
-        </ul>
-        <h2>Fechas Disponibles</h2>
-        <ol>
-          <li>27 al 28 de Julio 2024</li>
-          <li>21 al 22 de Septiembre 2024</li>
-          <li>23 al 24 de Noviembre 2024</li>
-        </ol>
-        <h2>Costos</h2>
-        <ul>
-          <li>Costo individual: 800.000 COP</li>
-          <li>Costo por pareja: 1.400.000 COP</li>
-        </ul>
-        <div class="banner-boton">
-          <button
-            class="btn btn-warning mb-3 text-white text-white boton-reserva"
-            (click)="scroll(elemento)"
-          >
-            Reserva aqui
-          </button>
+      <div
+        class="modal fade"
+        id="modal-nevados"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Tour Nevados
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h2>Descripción</h2>
+              <p>
+                Tour dirigido para riders con motocicleta de 250cc en adelante.
+                En este tour tendremos la oportunidad de contar con ruta Off
+                Road 30% y On Road 70% con un nivel de exigencia básico.
+              </p>
+              <h2>Recorrido</h2>
+              <p>
+                Saldremos desde la ciudad de Bogotá, hasta Murillo en el
+                departamento del Tolima, podremos visitar el imponente Nevado
+                del Ruiz hasta llegar a nuestro destino en Manizalez - Caldas.
+              </p>
+              <h2>Qué Incluye</h2>
+              <ul>
+                <li>2 días, 1 noche de hospedaje en finca ecoturística</li>
+                <li>Desayunos y almuerzos incluídos</li>
+                <li>Guías durante el recorrido</li>
+                <li>Noche de termales en Murillo - Tolima</li>
+                <li>Seguro de viaje</li>
+                <li>Dirigido a motos de 250cc en adelante</li>
+              </ul>
+              <h2>Fechas Disponibles</h2>
+              <ol>
+                <li>27 al 28 de Julio 2024</li>
+                <li>21 al 22 de Septiembre 2024</li>
+                <li>23 al 24 de Noviembre 2024</li>
+              </ol>
+              <h2>Costos</h2>
+              <ul>
+                <li>Costo individual: 800.000 COP</li>
+                <li>Costo por pareja: 1.400.000 COP</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning text-white boton-reserva"
+                (click)="scroll(elemento)"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      <p hidden>{{ mensaje2 }}</p>
     </div>
 
     <!--Informacion 3-->
@@ -159,57 +278,98 @@
         </p>
       </div>
       <button
-        href="#"
-        class="btn btn-warning mb-3 text-white button"
-        (click)="mostrarOcultarInfo3()"
+        type="button"
+        class="btn btn-warning text-dark mb-2"
+        data-bs-toggle="modal"
+        data-bs-target="#modal-putumayo"
       >
-        {{ mensaje_enlace3 }}
+        Mostrar
       </button>
-    </div>
-    <div *ngIf="mostrar3">
-      <div class="divInformacion">
-        <h2>Descripción</h2>
-        <p class="dark">
-          En este maravilloso destino rodeado de mucha naturaleza, recorremos
-          los departamentos de Cundinamarca, Tolima, Huila y Putumayo.
-        </p>
-        <h2>Recorrido</h2>
-        <p class="dark">
-          Saldremos desde la ciudad de Bogotá, hasta Mocoa en el departamento
-          del Putumayo, visitaremos la imponenete cascada del fin del mundo,
-          realizaremos una caminata ecológica por el cañon del Mandiyaco y
-          podras disfrutar de su grandiosa gastronomía.
-        </p>
-        <h2>Qué Incluye</h2>
-        <ul>
-          <li>5 días, 4 noches de hospedaje</li>
-          <li>Desayunos y almuerzos incluídos</li>
-          <li>Guías durante el recorrido</li>
-          <li>Ingreso a los destinos naturales</li>
-          <li>Seguro de viaje</li>
-          <li>Dirigido a motos de 250cc en adelante</li>
-        </ul>
-        <h2>Fechas Disponibles</h2>
-        <ol>
-          <li>20 al 25 de Julio 2024</li>
-          <li>31 de Agosto al 4 de Septiembre 2024</li>
-          <li>1 al 5 de Octubre 2024</li>
-        </ol>
-        <h2>Costos</h2>
-        <ul>
-          <li>Costo individual: 1.800.000 COP</li>
-          <li>Costo por pareja: 3.200.000 COP</li>
-        </ul>
-        <div class="banner-boton">
-          <button
-            class="btn btn-warning mb-3 text-white text-white boton-reserva"
-            (click)="scroll(elemento)"
-          >
-            Reserva aqui
-          </button>
+      <div
+        class="modal fade"
+        id="modal-putumayo"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Tour Putumayo
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h2>Descripción</h2>
+              <p class="dark">
+                En este maravilloso destino rodeado de mucha naturaleza,
+                recorremos los departamentos de Cundinamarca, Tolima, Huila y
+                Putumayo.
+              </p>
+              <h2>Recorrido</h2>
+              <p class="dark">
+                Saldremos desde la ciudad de Bogotá, hasta Mocoa en el
+                departamento del Putumayo, visitaremos la imponenete cascada del
+                fin del mundo, realizaremos una caminata ecológica por el cañon
+                del Mandiyaco y podras disfrutar de su grandiosa gastronomía.
+              </p>
+              <h2>Qué Incluye</h2>
+              <ul>
+                <li>5 días, 4 noches de hospedaje</li>
+                <li>Desayunos y almuerzos incluídos</li>
+                <li>Guías durante el recorrido</li>
+                <li>Ingreso a los destinos naturales</li>
+                <li>Seguro de viaje</li>
+                <li>Dirigido a motos de 250cc en adelante</li>
+              </ul>
+              <h2>Fechas Disponibles</h2>
+              <ol>
+                <li>20 al 25 de Julio 2024</li>
+                <li>31 de Agosto al 4 de Septiembre 2024</li>
+                <li>1 al 5 de Octubre 2024</li>
+              </ol>
+              <h2>Costos</h2>
+              <ul>
+                <li>Costo individual: 1.800.000 COP</li>
+                <li>Costo por pareja: 3.200.000 COP</li>
+              </ul>
+              <h2>Fechas Disponibles</h2>
+              <ol>
+                <li>27 al 28 de Julio 2024</li>
+                <li>21 al 22 de Septiembre 2024</li>
+                <li>23 al 24 de Noviembre 2024</li>
+              </ol>
+              <h2>Costos</h2>
+              <ul>
+                <li>Costo individual: 800.000 COP</li>
+                <li>Costo por pareja: 1.400.000 COP</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning text-white boton-reserva"
+                (click)="scroll(elemento)"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      <p hidden>{{ mensaje3 }}</p>
     </div>
 
     <!--Informacion 4-->
@@ -228,280 +388,309 @@
         </p>
       </div>
       <button
-        href="#"
-        class="btn btn-warning mb-3 text-white button"
-        (click)="mostrarOcultarInfo4()"
+        type="button"
+        class="btn btn-warning text-dark mb-2"
+        data-bs-toggle="modal"
+        data-bs-target="#modal-desierto"
       >
-        {{ mensaje_enlace4 }}
+        Mostrar
       </button>
-    </div>
-    <div *ngIf="mostrar4">
-      <div class="divInformacion">
-        <h2>Descripción</h2>
-        <p class="dark">
-          Vive esta gran experencia de aventura a bordo de tu moto donde
-          recorrerás 300km, desafiando 120km en ruta off road.
-        </p>
-        <h2>Recorrido</h2>
-        <p class="dark">
-          Saldremos desde la ciudad de Bogotá, cruzando el departamento del
-          Huila hasta llegar al desierto de la Tatacoa, pasando tu motocicleta
-          en ferry por el río Magdalena, disfruta de los paisajes que nos brinda
-          este maravilloso ecosistema que incluye rutas y puentes antiguos.
-        </p>
-        <h2>Qué Incluye</h2>
-        <ul>
-          <li>2 días, 1 noche de hospedaje con acomodación doble</li>
-          <li>Desayunos y almuerzos incluídos</li>
-          <li>Guías durante el recorrido</li>
-          <li>Seguro de viaje</li>
-          <li>Dirigido a motos de 250cc en adelante</li>
-        </ul>
-        <h2>Fechas Disponibles</h2>
-        <ol>
-          <li>7 al 8 de Septiembre 2024</li>
-          <li>26 al 27 de Octubre 2024</li>
-          <li>23 al 24 de Noviembre 2024</li>
-        </ol>
-        <h2>Costos</h2>
-        <ul>
-          <li>Costo individual: 700.000 COP</li>
-          <li>Costo por pareja: 1.200.000 COP</li>
-        </ul>
-        <div class="banner-boton">
-          <button
-            class="btn btn-warning mb-3 text-white text-white boton-reserva"
-            (click)="scroll(elemento)"
-          >
-            Reserva aqui
-          </button>
+      <div
+        class="modal fade"
+        id="modal-desierto"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Tour Desierto
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h2>Descripción</h2>
+              <p class="dark">
+                Vive esta gran experencia de aventura a bordo de tu moto donde
+                recorrerás 300km, desafiando 120km en ruta off road.
+              </p>
+              <h2>Recorrido</h2>
+              <p class="dark">
+                Saldremos desde la ciudad de Bogotá, cruzando el departamento
+                del Huila hasta llegar al desierto de la Tatacoa, pasando tu
+                motocicleta en ferry por el río Magdalena, disfruta de los
+                paisajes que nos brinda este maravilloso ecosistema que incluye
+                rutas y puentes antiguos.
+              </p>
+              <h2>Qué Incluye</h2>
+              <ul>
+                <li>2 días, 1 noche de hospedaje con acomodación doble</li>
+                <li>Desayunos y almuerzos incluídos</li>
+                <li>Guías durante el recorrido</li>
+                <li>Seguro de viaje</li>
+                <li>Dirigido a motos de 250cc en adelante</li>
+              </ul>
+              <h2>Fechas Disponibles</h2>
+              <ol>
+                <li>7 al 8 de Septiembre 2024</li>
+                <li>26 al 27 de Octubre 2024</li>
+                <li>23 al 24 de Noviembre 2024</li>
+              </ol>
+              <h2>Costos</h2>
+              <ul>
+                <li>Costo individual: 700.000 COP</li>
+                <li>Costo por pareja: 1.200.000 COP</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning text-white boton-reserva"
+                (click)="scroll(elemento)"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      <p hidden>{{ mensaje4 }}</p>
     </div>
-  </div>
 
-  <!--Formulario-->
+    <!--Formulario-->
 
-  <div class="banner-formulario" #elemento>
-    <h1 class="text-warning mb-4 text-center">Datos del viajero</h1>
-    <form
-      (ngSubmit)="enviarReserva(heroForm)"
-      #heroForm="ngForm"
-      class="row g-3"
-    >
-      <div class="col-md-12 col-xl-6">
-        <label for="inputPassword4" class="form-label text-warning"
-          >Nombre</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="inputPassword4"
-          name="nombre"
-          [(ngModel)]="nombre"
-        />
-      </div>
-      <div class="col-xl-6">
-        <label for="inputPassword4" class="form-label text-warning"
-          >Tipo de documento</label
-        >
-        <select
-          class="form-select"
-          aria-label="Default select example"
-          name="tipoDocumento"
-          [(ngModel)]="tipoDocumento"
-        >
-          <option selected>Seleccione...</option>
-          <option value="CÉDULA DE CIUDADANÍA">CÉDULA DE CIUDADANÍA</option>
-          <option value="CÉDULA EXTRANJERA">CÉDULA EXTRANJERA</option>
-          <option value="PASAPORTE">PASAPORTE</option>
-          <option value="REGISTRO CIVIL">REGISTRO CIVIL</option>
-          <option value="TARJETA DE IDENTIDAD">TARJETA DE IDENTIDAD</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label text-warning"
-          >No Documento</label
-        >
-        <input
-          type="number"
-          class="form-control"
-          id="inputPassword4"
-          name="documento"
-          [(ngModel)]="documento"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label text-warning"
-          >Fecha nacimiento</label
-        >
-        <input
-          type="date"
-          class="form-control"
-          id="inputPassword4"
-          name="fechaNacimiento"
-          [(ngModel)]="fechaNacimiento"
-        />
-      </div>
-      <div class="col-xl-6">
-        <label for="inputPassword4" class="form-label text-warning"
-          >Plan de viaje</label
-        >
-        <select
-          class="form-select"
-          aria-label="Default select example"
-          name="planViaje"
-          [(ngModel)]="planViaje"
-        >
-          <option selected>Seleccione...</option>
-          <option value="Tour punta gallinas - Guajira">
-            Tour punta gallinas - Guajira
-          </option>
-          <option value="Tour Cascadas fin del mundo - Putumayo">
-            Tour Cascadas fin del mundo - Putumayo
-          </option>
-          <option value="Tour desierto la tatacoa - Huila">
-            Tour desierto la tatacoa - Huila
-          </option>
-          <option value="Tour Los nevados - Manizales">
-            Tour Los nevados - Manizales
-          </option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label text-warning"
-          >Fecha de viaje</label
-        >
-        <input
-          type="date"
-          class="form-control"
-          id="inputPassword4"
-          name="fechaViaje"
-          [(ngModel)]="fechaViaje"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label text-warning">Email</label>
-        <input
-          type="email"
-          class="form-control"
-          id="inputEmail4"
-          placeholder="email@gmail.com"
-          name="email"
-          [(ngModel)]="email"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label text-warning"
-          >Número contacto emergencia</label
-        >
-        <input
-          type="number"
-          class="form-control"
-          id="inputPassword4"
-          name="numeroEmergencia"
-          [(ngModel)]="numeroEmergencia"
-        />
-      </div>
+    <div class="banner-formulario" #elemento>
+      <h1 class="text-light mb-4 text-center">Datos del viajero</h1>
+      <form
+        (ngSubmit)="enviarReserva(heroForm)"
+        #heroForm="ngForm"
+        class="row g-3"
+      >
+        <div class="col-md-12 col-xl-6">
+          <label for="inputPassword4" class="form-label text-light"
+            >Nombre</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="inputPassword4"
+            name="nombre"
+            [(ngModel)]="nombre"
+          />
+        </div>
+        <div class="col-xl-6">
+          <label for="inputPassword4" class="form-label text-light"
+            >Tipo de documento</label
+          >
+          <select
+            class="form-select"
+            name="tipoDocumento"
+            [(ngModel)]="tipoDocumento"
+          >
+            <option>Seleccione...</option>
+            <option value="CÉDULA DE CIUDADANÍA">CÉDULA DE CIUDADANÍA</option>
+            <option value="CÉDULA EXTRANJERA">CÉDULA EXTRANJERA</option>
+            <option value="PASAPORTE">PASAPORTE</option>
+            <option value="REGISTRO CIVIL">REGISTRO CIVIL</option>
+            <option value="TARJETA DE IDENTIDAD">TARJETA DE IDENTIDAD</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label text-light"
+            >No Documento</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="inputPassword4"
+            name="documento"
+            [(ngModel)]="documento"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label text-light"
+            >Fecha nacimiento</label
+          >
+          <input
+            type="date"
+            class="form-control"
+            id="inputPassword4"
+            name="fechaNacimiento"
+            [(ngModel)]="fechaNacimiento"
+          />
+        </div>
+        <div class="col-xl-6">
+          <label for="inputPassword4" class="form-label text-light"
+            >Plan de viaje</label
+          >
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            name="planViaje"
+            [(ngModel)]="planViaje"
+          >
+            <option selected>Seleccione...</option>
+            <option value="Tour punta gallinas - Guajira">
+              Tour punta gallinas - Guajira
+            </option>
+            <option value="Tour Cascadas fin del mundo - Putumayo">
+              Tour Cascadas fin del mundo - Putumayo
+            </option>
+            <option value="Tour desierto la tatacoa - Huila">
+              Tour desierto la tatacoa - Huila
+            </option>
+            <option value="Tour Los nevados - Manizales">
+              Tour Los nevados - Manizales
+            </option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label text-light"
+            >Fecha de viaje</label
+          >
+          <input
+            type="date"
+            class="form-control"
+            id="inputPassword4"
+            name="fechaViaje"
+            [(ngModel)]="fechaViaje"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label text-light">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="email@gmail.com"
+            name="email"
+            [(ngModel)]="email"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label text-light"
+            >Número contacto emergencia</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="inputPassword4"
+            name="numeroEmergencia"
+            [(ngModel)]="numeroEmergencia"
+          />
+        </div>
 
-      <!--DATOS MOTO-->
+        <!--DATOS MOTO-->
 
-      <h1 class="text-white text-center">Datos de la Motocicleta</h1>
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label text-warning">Marca</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputEmail4"
-          name="marca"
-          [(ngModel)]="marca"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputCity" class="form-label text-warning">Modelo</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputCity"
-          name="modelo"
-          [(ngModel)]="modelo"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputCity" class="form-label text-warning">Año</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputCity"
-          name="anio"
-          [(ngModel)]="anio"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputCity" class="form-label text-warning"
-          >Cilindraje</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="inputCity"
-          name="cilindraje"
-          [(ngModel)]="cilindraje"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label text-warning"
-          >Fecha RTM</label
-        >
-        <input
-          type="date"
-          class="form-control"
-          id="inputPassword4"
-          name="fechaRTM"
-          [(ngModel)]="fechaRTM"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label text-warning"
-          >Fecha Soat</label
-        >
-        <input
-          type="date"
-          class="form-control"
-          id="inputPassword4"
-          name="fechaSoat"
-          [(ngModel)]="fechaSoat"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label text-warning"
-          >Fecha TDR</label
-        >
-        <input
-          type="date"
-          class="form-control"
-          id="inputPassword4"
-          name="fechaTDR"
-          [(ngModel)]="fechaTDR"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputGroupFile03" class="form-label text-warning"
-          >Tarjeta de propiedad</label
-        >
-        <input
-          type="file"
-          class="form-control"
-          id="inputGroupFile03"
-          aria-describedby="inputGroupFileAddon03"
-          aria-label="Upload"
-          (change)="inputFile($event)"
-        />
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </div>
-    </form>
+        <h1 class="text-white text-center">Datos de la Motocicleta</h1>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label text-light">Marca</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputEmail4"
+            name="marca"
+            [(ngModel)]="marca"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label text-light">Modelo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCity"
+            name="modelo"
+            [(ngModel)]="modelo"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label text-light">Año</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCity"
+            name="anio"
+            [(ngModel)]="anio"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label text-light"
+            >Cilindraje</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="inputCity"
+            name="cilindraje"
+            [(ngModel)]="cilindraje"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label text-light"
+            >Fecha RTM</label
+          >
+          <input
+            type="date"
+            class="form-control"
+            id="inputPassword4"
+            name="fechaRTM"
+            [(ngModel)]="fechaRTM"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label text-light"
+            >Fecha Soat</label
+          >
+          <input
+            type="date"
+            class="form-control"
+            id="inputPassword4"
+            name="fechaSoat"
+            [(ngModel)]="fechaSoat"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label text-light"
+            >Fecha TDR</label
+          >
+          <input
+            type="date"
+            class="form-control"
+            id="inputPassword4"
+            name="fechaTDR"
+            [(ngModel)]="fechaTDR"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputGroupFile03" class="form-label text-light"
+            >Tarjeta de propiedad</label
+          >
+          <input
+            type="file"
+            class="form-control"
+            id="inputGroupFile03"
+            aria-describedby="inputGroupFileAddon03"
+            aria-label="Upload"
+            (change)="inputFile($event)"
+          />
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
