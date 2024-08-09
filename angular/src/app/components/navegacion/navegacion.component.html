@@ -18,17 +18,15 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a
-            class="nav-link active me-3 text-light fw-normal fs-5"
+            class="nav-link nav2 active me-3 fw-normal fs-5"
             routerLink="/inicio"
             >Inicio</a
           >
-          <a
-            class="nav-link me-3 text-light fw-normal fs-5"
-            routerLink="/productos"
+          <a class="nav-link nav2 me-3 fw-normal fs-5" routerLink="/productos"
             >Productos</a
           >
           <a
-            class="nav-link me-3 text-light fw-normal fs-5"
+            class="nav-link nav2 me-3 fw-normal fs-5"
             routerLink="/experiencias"
             >Experiencias</a
           >
@@ -50,9 +48,11 @@
     </div>
     <div class="me-2">
       @if (loginService.isLogin()) {
-      <a class="nav-link text-dark fw-semibold" routerLink="/privado"
-        ><img src="../../../assets/icons8-moto-32.png" alt="" /> Mi perfil</a
-      >
+      <button type="button" class="btn btn-warning text-dark fw-semibold">
+        <a class="nav-link text-dark fw-semibold" routerLink="/privado"
+          >Mi Perfil</a
+        >
+      </button>
       }@else {
       <a hidden class="nav-link text-dark fw-semibold" routerLink="/privado"
         ><img src="../../../assets/icons8-moto-32.png" alt="" /> Mi perfil</a
@@ -66,7 +66,7 @@
         class="btn btn-warning text-dark fw-semibold p-1"
         (click)="loginService.logOut()"
       >
-        LogOut
+        Cerrar Sesion
       </button>
       }@else {
       <button class="btn btn-warning text-dark fw-semibold">

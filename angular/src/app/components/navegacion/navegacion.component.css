@@ -4,6 +4,10 @@
   /* backdrop-filter: invert(90%); */
 }
 
+.nav2 {
+  color: azure;
+}
+
 .banner-login {
   display: flex;
   padding-top: 20px;
@@ -14,8 +18,9 @@ a {
   border-radius: 10px;
 }
 
-.navbar-nav > a:hover {
+.nav2:hover {
   background-color: lightgoldenrodyellow;
+  color: black;
 }
 
 .logo {
