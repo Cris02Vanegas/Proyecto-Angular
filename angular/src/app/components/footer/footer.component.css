@@ -1,6 +1,7 @@
 footer {
   bottom: 0;
   width: 100%;
+  position: absolute;
   color: white;
   height: 60px;
   display: flex;

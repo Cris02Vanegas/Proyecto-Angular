@@ -2,7 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 225px;
+  margin-top: 30px;
+}
+
+a {
+  display: inline;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 8px;
+  border-radius: 5px;
 }
 
 button {
@@ -32,9 +40,6 @@ footer {
 @media only screen and (min-width: 1201px) {
   .container {
     margin-left: 100px;
-  }
-  h1 {
-    margin-left: 170px;
   }
 }
 

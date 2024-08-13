@@ -33,25 +33,25 @@ export class PrivadoComponent {
   correo: string = '';
 
   nombre: string = '';
-  tipoDocumento: string = '';
-  documento: Number = 0;
+  tipoDocumento: string | null = null;
+  documento: string = '';
   fechaNacimiento: any;
-  planViaje: any;
+  planViaje: any | null = null;
   fechaViaje: any;
   email: string = '';
-  numeroEmergencia: Number = 0;
+  numeroEmergencia: string = '';
   imagen: File | null = null;
   marca: string = '';
   modelo: string = '';
-  anio: Number = 0;
-  cilindraje: Number = 0;
+  anio: string = '';
+  cilindraje: string = '';
   fechaRTM: any;
   fechaSoat: any;
   fechaTDR: any;
-
   selected: string = 'Seleccione...';
 
   reservas: any[] = [];
+  reservas_cantidad: any[] = [];
 
   inputFile(event: any) {
     if (event.target.files && event.target.files[0]) {
@@ -84,6 +84,40 @@ export class PrivadoComponent {
           if (respuesta.resultado === 'Bien') {
             this.toastService.success(respuesta.mensaje);
             heroForm.reset();
+            const token: any = localStorage.getItem('token');
+            if (token) {
+              this.loginService
+                .validarToken(token)
+                .subscribe((response: any) => {
+                  if (response.resultado === 'bien') {
+                    this.name = response.datos.decodificado.name;
+                    this.correo = response.datos.decodificado.email;
+                    this.reservaService
+                      .getReservas()
+                      .subscribe((response: any) => {
+                        if (response.resultado === 'Bien') {
+                          this.reservas = response.datos;
+                          const filtered = this.reservas.filter((reserva) => {
+                            return reserva.email === this.correo;
+                          });
+                          if (filtered.length > 0) {
+                            this.reservas = filtered;
+                          } else {
+                            if (filtered.length === 0) {
+                              this.reservas = [];
+                            }
+                          }
+                        } else {
+                          this.toastService.error('An error ocurred');
+                        }
+                      });
+                  } else {
+                    this.loginService.logOut();
+                  }
+                });
+            } else {
+              this.loginService.logOut();
+            }
           } else {
             this.toastService.error('An error ocurred');
           }
@@ -99,9 +133,20 @@ export class PrivadoComponent {
       this.loginService.validarToken(token).subscribe((response: any) => {
         if (response.resultado === 'bien') {
           this.name = response.datos.decodificado.name;
+          this.correo = response.datos.decodificado.email;
           this.reservaService.getReservas().subscribe((response: any) => {
             if (response.resultado === 'Bien') {
               this.reservas = response.datos;
+              const filtered = this.reservas.filter((reserva) => {
+                return reserva.email === this.correo;
+              });
+              if (filtered.length > 0) {
+                this.reservas = filtered;
+              } else {
+                if (filtered.length === 0) {
+                  this.reservas = [];
+                }
+              }
             } else {
               this.toastService.error('An error ocurred');
             }

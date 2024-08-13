@@ -79,7 +79,6 @@ export class ReservaComponent {
           .putReservasInfo(id, credenciales)
           .subscribe((respuesta: any) => {
             if (respuesta.resultado == 'Bien') {
-              console.log(respuesta.datos.nombre);
               this.toastService.success('Actualizacion Exitosa');
               this.reservaService.getReservas().subscribe((response: any) => {
                 if (response.resultado === 'Bien') {
@@ -89,7 +88,6 @@ export class ReservaComponent {
                   });
                   if (filtered.length > 0) {
                     this.reservas = filtered;
-                    console.log(this.reservas);
                   } else {
                     if (filtered.length === 0) {
                       this.reservas = [];
@@ -111,22 +109,48 @@ export class ReservaComponent {
     this.reservaService.deleteReserva(id).subscribe((response: any) => {
       if (response.resultado === 'Bien') {
         this.toastService.success(response.mensaje);
-        this.reservaService.getReservasInfo(id).subscribe((response: any) => {
+        const token: any = localStorage.getItem('token');
+        if (token) {
+          this.loginService.validarToken(token).subscribe((response: any) => {
+            if (response.resultado === 'bien') {
+              this.correo = response.datos.decodificado.email;
+              this.reservaService.getReservas().subscribe((response: any) => {
+                if (response.resultado === 'Bien') {
+                  this.reservas = response.datos;
+                  const filtered = this.reservas.filter((reserva) => {
+                    return reserva.email === this.correo;
+                  });
+                  if (filtered.length > 0) {
+                    this.reservas = filtered;
+                  } else {
+                    if (filtered.length === 0) {
+                      this.reservas = [];
+                    }
+                  }
+                } else {
+                  this.toastService.error('An error ocurred');
+                }
+              });
+            } else {
+              this.loginService.logOut();
+            }
+          });
+        }
+        /* this.reservaService.getReservasInfo(id).subscribe((response: any) => {
           if (response.resultado === 'Bien') {
             this.reservas = response.datos;
           } else {
             this.toastService.error('An error ocurred');
           }
-        });
+        }); */
       } else {
-        this.toastService.error('An error ocurred');
+        this.toastService.error(response.mensaje);
       }
     });
   }
 
   handleUpdate(reserva: any) {
     this.reservaUpdate = { ...reserva };
-    console.log(this.reservaUpdate);
   }
 
   handleInfo(reserva: any) {
@@ -159,7 +183,6 @@ export class ReservaComponent {
               });
               if (filtered.length > 0) {
                 this.reservas = filtered;
-                console.log(this.reservas);
               } else {
                 if (filtered.length === 0) {
                   this.reservas = [];

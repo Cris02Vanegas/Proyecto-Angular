@@ -1,9 +1,13 @@
-<p class="fs-2">Bienvenido {{ name }}</p>
-<a class="nav-link active me-3 text-white" routerLink="/reserva"
-  >Mis Reservas →</a
->
+<div class="reservas">
+  <div class="welcome">
+    <p class="fs-2">Bienvenido {{ name }}</p>
+  </div>
+  <a class="nav-link active me-3 text-white" routerLink="/reserva"
+    >Reservas <span class="number-reserve">{{ reservas.length }}</span></a
+  >
+</div>
 <div class="container">
-  <h1 class="text-white text-decoration-underline">RESERVA TU DESTINO</h1>
+  <h1 class="text-warning">RESERVA TU DESTINO</h1>
   <div class="banner">
     <div class="card" style="width: 18rem">
       <img
@@ -98,7 +102,7 @@
               </button>
               <button
                 type="button"
-                class="btn btn-warning text-white boton-reserva"
+                class="btn btn-warning text-dark boton-reserva"
                 (click)="scroll(elemento)"
               >
                 Reservar
@@ -251,7 +255,7 @@
               </button>
               <button
                 type="button"
-                class="btn btn-warning text-white boton-reserva"
+                class="btn btn-warning text-dark boton-reserva"
                 (click)="scroll(elemento)"
               >
                 Reservar
@@ -361,7 +365,7 @@
               </button>
               <button
                 type="button"
-                class="btn btn-warning text-white boton-reserva"
+                class="btn btn-warning text-dark boton-reserva"
                 (click)="scroll(elemento)"
               >
                 Reservar
@@ -459,7 +463,7 @@
               </button>
               <button
                 type="button"
-                class="btn btn-warning text-white boton-reserva"
+                class="btn btn-warning text-dark boton-reserva"
                 (click)="scroll(elemento)"
               >
                 Reservar
@@ -500,7 +504,7 @@
             name="tipoDocumento"
             [(ngModel)]="tipoDocumento"
           >
-            <option>Seleccione...</option>
+            <option [ngValue]="null">Seleccione...</option>
             <option value="CÉDULA DE CIUDADANÍA">CÉDULA DE CIUDADANÍA</option>
             <option value="CÉDULA EXTRANJERA">CÉDULA EXTRANJERA</option>
             <option value="PASAPORTE">PASAPORTE</option>
@@ -509,14 +513,15 @@
           </select>
         </div>
         <div class="col-md-6">
-          <label for="inputPassword4" class="form-label text-light"
+          <label for="documento" class="form-label text-light"
             >No Documento</label
           >
           <input
-            type="number"
+            type="text"
             class="form-control"
-            id="inputPassword4"
+            id="documento"
             name="documento"
+            placeholder="No Documento"
             [(ngModel)]="documento"
           />
         </div>
@@ -542,7 +547,7 @@
             name="planViaje"
             [(ngModel)]="planViaje"
           >
-            <option selected>Seleccione...</option>
+            <option [ngValue]="null">Seleccione...</option>
             <option value="Tour punta gallinas - Guajira">
               Tour punta gallinas - Guajira
             </option>
@@ -581,14 +586,15 @@
           />
         </div>
         <div class="col-md-6">
-          <label for="inputPassword4" class="form-label text-light"
+          <label for="numContact" class="form-label text-light"
             >Número contacto emergencia</label
           >
           <input
-            type="number"
+            type="text"
             class="form-control"
-            id="inputPassword4"
+            id="numContact"
             name="numeroEmergencia"
+            placeholder="No Emergencia"
             [(ngModel)]="numeroEmergencia"
           />
         </div>
